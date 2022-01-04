@@ -1,0 +1,26 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{can_upload}}">
+<view class="container flex">
+    <view>
+        <image src="{{user.face}}" class="avatar" bindtap="upload"></image>
+        <view class="item flex">{{user.nickname}}</view>
+    </view>
+</view>
+</block>
+<block wx:else>
+<view class="container flex">
+    <view>
+        <image src="{{user.face}}" class="avatar"></image>
+        <view class="item-no flex">{{user.nickname}}</view>
+        <view class="item-no flex">{{time}}后可重新验证</view>
+    </view>
+</view>
+
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

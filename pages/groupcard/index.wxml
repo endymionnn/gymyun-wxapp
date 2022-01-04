@@ -1,0 +1,34 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+
+<view class="card">
+    <view class="card-item">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+        <navigator class="item" url="/pages/groupcard/view?id={{item.id}}&shop_id={{shop_id}}" open-type="{{opentype}}" hover-class="none" style="background-image: url({{item.bgimg}})">
+            <view class="item-bg-rgba">
+                <view class="item-card-name">{{item.name}}</view>
+                <view class="item-card-price">￥{{item.price}}<text wx:if="{{item.orig > 0}}">￥{{item.orig}}</text></view>
+                <view class="item-card-remark">
+                    <text>有效期：{{item.month}}个月</text>
+                    <text >可使用：{{item.can_use}}次</text>
+                </view>
+            </view>
+        </navigator>
+    </block>
+    </view>
+</view>
+
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>暂无可购买的团课卡</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

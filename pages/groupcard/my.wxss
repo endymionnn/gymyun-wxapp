@@ -1,0 +1,78 @@
+.vip-main {
+    padding-top: 15px;
+}
+
+.vip-list {
+    margin: 0 15px 15px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 25px 15px 15px;
+    background-image: url('https://www.jiemo365.com/static/wxapp/images/vipbg.png');
+    background-size: cover;
+}
+
+.vip-main .vip-list:nth-child(1n) {
+    background-color: #799bda;
+}
+
+.vip-main .vip-list:nth-child(2n) {
+    background-color: #69b29b;
+}
+
+.vip-main .vip-list:nth-child(3n) {
+    background-color: #807dd0;
+}
+
+.vip-list .h6 {
+    font-size: 42rpx;
+    margin-left: 65px;
+    margin-top: 5px;
+}
+
+.vip-list .p {
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.vip-list .info {
+    font-size: 24rpx;
+    padding: 10px 0 6px;
+}
+
+.vip-shop .img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+}
+
+.vip-shop .p1 {
+    margin-left: 65px;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: left;
+}
+.vip-shop .p2 {
+    float: left;
+    font-size: 40rpx;
+    color: #fff;
+    text-align: left;
+    font-family: menlo,tahoma;
+    font-weight: 600;
+    margin-top: 30px;
+    text-shadow: 0px -1px #000, 0 1px #000;
+    line-height: 36px;
+}
+.vip-shop .p3 {
+    float: right;
+    font-size: 24rpx;
+    color: #eee;
+    text-align: right;
+    margin-top: 30px;
+}
+.vip-shop .clear {
+    clear: both;
+}

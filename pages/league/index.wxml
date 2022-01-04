@@ -1,0 +1,59 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="page">
+    <form bindsubmit='post'>
+    <view class="page__bd">
+        <view class="weui-cells__title">联系人</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="realname" value="" placeholder="请输入您的称呼" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">联系电话</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" value="" placeholder="请输入联系电话" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">联系微信</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="weixin" value="" placeholder="请输入微信号" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">贵司名称</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="company" value="" placeholder="请输入贵司名称" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">所在地址</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="address" value="" placeholder="请输入您的地址" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">备注说明</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" name="remark" value="" placeholder="请输入内容" auto-height="true" show-confirm-bar="false" maxlength="-1"/>
+                </view>
+            </view>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" form-type="submit">确定</button>
+        </view>
+    </view>
+    </form>
+</view>

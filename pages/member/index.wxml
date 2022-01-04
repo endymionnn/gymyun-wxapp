@@ -1,0 +1,219 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="weui-cells weui-cells_after-title index-header">
+    <view class="weui-cell" >
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <view class="headimg"><open-data type="userAvatarUrl"></open-data></view>
+        </view>
+        <view class="weui-cell__bd">
+            <view class="nickname"><open-data type="userNickName"></open-data></view>
+            <view class="desc" wx:if="{{wxapp_global.credits}}">
+                <navigator url="/pages/member/credits" open-type="{{opentype}}" hover-class="none">
+                    我的积分：{{credits}}
+                </navigator>
+            </view>
+        </view>
+        <view class="weui-cell__ft" style="position: relative;margin-right: 10px;">
+            <navigator url="/pages/card/iccard" open-type="{{opentype}}" hover-class="none">
+                <text class="iconfont iconerweima_fuzhi"></text>
+            </navigator>
+            <view class="body-view member_invisible" wx:if="{{invisible == 0}}">
+                <text>在线</text>
+                <switch checked bindchange="invisibleChange"/>
+            </view>
+            <view class="body-view member_invisible" wx:if="{{invisible == 1}}">
+                <text>隐身</text>
+                <switch bindchange="invisibleChange"/>
+            </view>
+        </view>
+    </view>
+</view>
+
+<block wx:if="{{manage}}">
+<view style="height: 10px; background: #f7f7f7;"></view>
+<view class="weui-cells weui-cells_after-title">
+    <navigator url="/pages/coachcp/index" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{coach}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconjianshenjiaolian"></view></view>
+        <view class="weui-cell__bd">我是教练</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/staffcp/index" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{staff}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconjiaolianrenzheng"></view></view>
+        <view class="weui-cell__bd">销售管理</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+</view>
+</block>
+<view style="height: 10px; background: #f7f7f7;"></view>
+<view class="weui-cells weui-cells_after-title">
+    <navigator url="/pages/user/info" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none">
+        <view class="weui-cell__hd"><view class="i iconfont icongerenxinxi"></view></view>
+        <view class="weui-cell__bd">个人信息</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/phone" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_phone}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconshoujiyanzheng"></view></view>
+        <view class="weui-cell__bd">手机验证与绑定</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/face" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_face}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconface-de"></view></view>
+        <view class="weui-cell__bd">头像上传</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/money" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none">
+        <view class="weui-cell__hd"><view class="i iconfont iconqianbao"></view></view>
+        <view class="weui-cell__bd">我的钱包</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/deposit/index" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_deposit}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconqiapian"></view></view>
+        <view class="weui-cell__bd">押金</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/card/my" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none">
+        <view class="weui-cell__hd"><view class="i iconfont iconhuiyuanqia"></view></view>
+        <view class="weui-cell__bd">我的会员卡</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/groupcard/my" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_groupcard}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconqiapian"></view></view>
+        <view class="weui-cell__bd">我的团课卡</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/mall/creditorder" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_mall_credit}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconjifenduihuan"></view></view>
+        <view class="weui-cell__bd">积分兑换记录</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/werun" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{wxapp_global.werun}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconweixinyundong"></view></view>
+        <view class="weui-cell__bd">微信运动</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/sign/index" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{wxapp_global.credits}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconqiandao"></view></view>
+        <view class="weui-cell__bd">签到</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/bodyfit" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_bodyfit}}">
+        <view class="weui-cell__hd"><view class="i iconfont icontice"></view></view>
+        <view class="weui-cell__bd">智能体测</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/fans" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_fans}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconfensiguanli"></view></view>
+        <view class="weui-cell__bd">我的粉丝</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/follow" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_follow}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconguanzhu"></view></view>
+        <view class="weui-cell__bd">我的关注</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/gym" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_gym}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconjianshenjilu"></view></view>
+        <view class="weui-cell__bd">出入场记录</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/pt" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_lesson}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconsijiaoke"></view></view>
+        <view class="weui-cell__bd">我的私教课程</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/gt" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_lesson}}">
+        <view class="weui-cell__hd"><view class="i iconfont icontuanke1"></view></view>
+        <view class="weui-cell__bd">团课预约记录</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/space/my" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_space}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconzhbg-room"></view></view>
+        <view class="weui-cell__bd">预约/包场记录</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/buffet/order" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_buffet}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconzizhufuwu"></view></view>
+        <view class="weui-cell__bd">自助服务</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/consume/index" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_consume}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconhexiao"></view></view>
+        <view class="weui-cell__bd">券码兑换</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/member/activity" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{show_activity}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconhuodong"></view></view>
+        <view class="weui-cell__bd">线下活动</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="/pages/league/index" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none" wx:if="{{wxapp_global.league}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconxiaodianjiamengshenqing"></view></view>
+        <view class="weui-cell__bd">加盟申请</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+</view>
+<view style="height: 10px; background: #f7f7f7;"></view>
+<view class="weui-cells weui-cells_after-title">
+    <button  class="weui-cell weui-cell_access" bindtap="phoneCall" data-phone="{{wxapp_global.kf_phone}}" hover-class="none" wx:if="{{wxapp_global.kf_phone}}">
+        <view class="weui-cell__hd"><view class="i iconfont icondianhua"></view></view>
+        <view class="weui-cell__bd">客服电话</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </button>
+    <button class="weui-cell weui-cell_access" open-type="contact" hover-class="none" wx:if="{{wxapp_global.show_contact}}">
+        <view class="weui-cell__hd"><view class="i iconfont icontubiao-"></view></view>
+        <view class="weui-cell__bd">在线客服</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </button>
+    <button class="weui-cell weui-cell_access" open-type="feedback" hover-class="none" wx:if="{{wxapp_global.show_feedback}}">
+        <view class="weui-cell__hd"><view class="i iconfont iconziyuan"></view></view>
+        <view class="weui-cell__bd">意见反馈</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </button>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>
+
+<view class="footer-box"></view>
+
+<view class="footer">
+    <block wx:if="{{show_faxian}}">
+    <view class="li">
+        <navigator url="/pages/index/index" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconyemian-copy"></view>
+            <text>发现</text>
+        </navigator>
+    </view>
+    </block>
+    <view class="li">
+        <navigator url="/pages/shop/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconhotel"></view>
+            <text>门店</text>
+        </navigator>
+    </view>
+    <block wx:if="{{lesson_coach}}">
+    <view class="li">
+        <navigator url="/pages/coach/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconjianshenjiaolian"></view>
+            <text>私教</text>
+        </navigator>
+    </view>
+    </block>
+    <block wx:if="{{lesson_group}}">
+    <view class="li">
+        <navigator url="/pages/group/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont icontuandui"></view>
+            <text>团课</text>
+        </navigator>
+    </view>
+    </block>
+    <view class="li on">
+        <navigator url="/pages/member/index" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconIcon_wodeB"></view>
+            <text>我的</text>
+        </navigator>
+    </view>
+</view>

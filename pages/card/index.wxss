@@ -1,0 +1,52 @@
+.card{
+    background-color: #fff;
+    padding-bottom: 20rpx;
+}
+.item-bg-rgba{
+    height: 350rpx;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.card-item {
+    width: 100%;
+    white-space: nowrap;
+    padding-bottom: 30rpx;
+    clear: both;
+}
+.card .card-item .item {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 30rpx;
+    height: 350rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.card .card-item .item .item-card-name{
+    padding: 40rpx;
+    font-size: 48rpx;
+}
+.card .card-item .item .item-card-price{
+    padding: 20rpx 40rpx;
+    font-size: 48rpx;
+}
+.card .card-item .item .item-card-price text{
+    margin-left: 10px;
+    font-size: 36rpx;
+    text-decoration:line-through;
+    font-style:italic;
+    color: #eee;
+}
+.card .card-item .item .item-card-remark{
+    font-size: 24rpx;
+    font-style:italic;
+    color: #eee;
+    text-align: right;
+}
+.card .card-item .item .item-card-remark text{
+    margin-right: 20rpx;
+}

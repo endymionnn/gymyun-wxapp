@@ -1,0 +1,32 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="gym-list">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="li cl">
+        <view class="minute">使用{{item.minute}}分钟，总消费：{{item.money}}元</view>
+        <view class="info cl">
+            <navigator url="/pages/shop/index?id={{item.shop_id}}" class="a" open-type="{{opentype}}" hover-class="none">
+                <image src="{{item.logo}}" class="img z"></image>
+                <view class="p">{{item.name}}</view>
+            </navigator>
+        </view>
+        <view class="info cl">
+            {{item.s_time}} ~ {{item.e_time}}
+        </view>
+    </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还没有任何记录哦</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

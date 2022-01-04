@@ -1,0 +1,104 @@
+.found-list {
+    margin: 0px 15px 15px;
+    position: relative;
+    min-height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.found-list:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: #000;
+    opacity: 0.5;
+}
+
+.found-list .navigator{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+}
+.found-list .title {
+    line-height: 56rpx;
+    font-size: 36rpx;
+    font-weight: 700;
+    font-family: helvetica;
+    width: 90%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.found-list .address {
+    padding: 3px 0 6px;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    width: 90%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.found-list .info {
+    display: inline-flex;
+    flex-direction: row;
+}
+.found-list .em {
+    padding: 0 10px;
+    line-height: 44rpx;
+    font-size: 24rpx;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    margin: 0 10rpx;
+}
+.found-list .tag{
+    justify-content: left;
+    text-align: center;
+    flex-direction: column;
+    align-items: left;
+    position: absolute;
+    left: 0px;
+    top: 5px;
+}
+.found-list .tag view{
+    padding: 2px 5px;
+    font-size: 18rpx;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.5);
+    float: left;
+    margin-left: 5px;
+}
+
+.weui-btn-area{
+    padding-top: 20px;
+}
+.weui-btn-area .btn-info{
+    color: #fff;
+    height: 38px;
+    width: 200px;
+    line-height: 38px;
+    margin: 0px auto;
+    padding: 0px;
+    border-radius: 5px;
+    border: 0px;
+    background: #0eaf96;
+    font-size: 28rpx;
+}

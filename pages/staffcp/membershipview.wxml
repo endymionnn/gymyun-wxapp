@@ -1,0 +1,108 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="header"></view>
+
+<view class="view-box">
+    <view class="info-header">
+        <view class="weui-cells__title">姓名</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                {{data.realname}}
+                <block wx:if="{{data.gender == 1}}">
+                <text class="iconfont man iconicon-icon-yxj-male"></text>
+                </block>
+                <block wx:elif="{{data.gender == 2}}">
+                <text class="iconfont woman iconnv1"></text>
+                </block>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+        </view>
+        <view class="weui-cells__title">联系电话</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd" bindtap="phoneCall" data-phone="{{data.phone}}">{{data.phone}}</view>
+                <view class="weui-cell__ft" bindtap="phoneCall" data-phone="{{data.phone}}"><text class="iconfont icondianhua"></text></view>
+            </view>
+        </view>
+    </view>
+    <view class="base-info">
+        <view class="li">
+            <view class="info">客户来源</view>
+            <view>{{data.source}}</view>
+        </view>
+        <view class="li">
+            <view class="info">销售意向</view>
+            <view>{{data.sale}}</view>
+        </view>
+        <view class="li">
+            <view class="info">目的</view>
+            <view>{{data.gym}}</view>
+        </view>
+        <view class="cl"></view>
+    </view>
+
+    <view class="weui-form-preview">
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">会员过期时间</view>
+                <view class="weui-form-preview__value">{{data.vip_endtime}}</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">上一次到店</view>
+                <view class="weui-form-preview__value">{{data.gym_last}}</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">本周到店</view>
+                <view class="weui-form-preview__value">{{data.gym_week}}次</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">本月到店</view>
+                <view class="weui-form-preview__value">{{data.gym_month}}次</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">总计到店</view>
+                <view class="weui-form-preview__value">{{data.gym_num}}次</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">客户维护记录</view>
+    <view class="weui-cells weui-cells_after-title info-list">
+        <block wx:for="{{list}}" wx:key="index" wx:item="item">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">{{item.dateline}}</view>
+            <view class="weui-cell__ft">{{item.remark}}</view>
+        </view>
+        </block>
+    </view>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>
+<view class="footer-box"></view>
+<view class="weui-btn-area">
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+            <navigator url="/pages/staffcp/addexp?id={{data.id}}" open-type="{{opentype}}" hover-class="none" class="add">新增维护记录</navigator>
+        </view>
+        <view style="width: 90px;">
+            <navigator url="/pages/staffcp/addordered?id={{data.id}}" open-type="{{opentype}}" hover-class="none" class="ordered">预约</navigator>
+        </view>
+        <view style="width: 90px;">
+            <navigator url="/pages/staffcp/add?id={{data.id}}" open-type="{{opentype}}" hover-class="none" class="edit">修改</navigator>
+        </view>
+    </view>
+</view>

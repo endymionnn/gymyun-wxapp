@@ -1,0 +1,32 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{show}}">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="body">
+        <view class="box">
+            <view class="shop">
+                <image src="{{item.logo}}" class="img"></image>
+                <view class="name">{{item.name}}</view>
+            </view>
+            <view class="box-line">
+                <view class="left"></view>
+                <view class="line"></view>
+                <view class="right"></view>
+            </view>
+            <view class="money">￥{{item.money}}</view>
+            <view class="money-tips" bindtap="refund" data-id="{{item.id}}">退押金</view>
+        </view>
+    </view>
+    </block>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还没有缴纳过押金</text>
+</view>
+</block>
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

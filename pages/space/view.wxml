@@ -1,0 +1,145 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="coach-view">
+    <view class="view-top" style="background-image: url({{data.pic}})"></view>
+    <view class="view-box">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__value" style="font-size: 48rpx;">{{data.title}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">价格</view>
+                    <view class="weui-form-preview__value">
+                        <text class="c_price">{{data.price}} / 小时</text>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd" wx:if="{{data.price != data.vip}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">会员价</view>
+                    <view class="weui-form-preview__value" style="color: #330033">{{data.vip}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd" wx:if="{{space_free_num}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">可免费预约时间</view>
+                    <view class="weui-form-preview__value" style="color: #330033">{{space_free_num}}小时</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">类型</view>
+                    <view class="weui-form-preview__value">
+                        <block wx:if="{{data.type == 1}}">
+                            <text>室内</text>
+                        </block>
+                        <block wx:else>
+                        <text>室外</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">适用人数</view>
+                    <view class="weui-form-preview__value">
+                        <block wx:if="{{data.num}}">
+                            <text>{{data.num}}人</text>
+                        </block>
+                        <block wx:else>
+                        <text>不限制</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{data.content}}">
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">预约说明</view>
+                    <view class="weui-form-preview__value">
+                        {{data.content}}
+                    </view>
+                </view>
+            </view>
+            </block>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">选择预约日期</view>
+                    <view class="weui-form-preview__value">
+                        <picker bindchange="bindDay" value="{{day}}" range="{{order_day}}">
+                            <view class="link-show-jump">{{order_day[day]}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">选择预约时间</view>
+                    <view class="weui-form-preview__value">
+                        <block wx:for="{{order_time}}" wx:key="time" wx:item="item">
+                            <block wx:if="{{item.status}}">
+                            <view class="time" bindtap="bindTime" data-index="{{index}}">
+                                <block wx:if="{{item.selected}}">
+                                <text class="iconfont iconxuanzhong"></text>{{item.str}}
+                                </block>
+                                <block wx:else>
+                                <text class="iconfont iconkexuan"></text>{{item.str}}
+                                </block>
+                            </view>
+                            </block>
+                            <block wx:else>
+                            <view class="disabled">
+                                <text class="iconfont iconkexuan"></text>{{item.str}}
+                            </view>
+                            </block>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{position_list.length > 0}}">
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">请选择位置</view>
+                    <view class="weui-form-preview__value">
+                        <block wx:if="{{position_check_key != 10000}}">
+                            {{position_check.name}}
+                        </block>
+                        <block wx:else>
+                            未选择
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item" style="overflow-x: auto;">
+                    <view class="position" style="width: {{data.width}}px; height: {{data.height}}px;">
+                        <block wx:for="{{position_list}}" wx:key="index" wx:item="item">
+                            <block wx:if="{{item.status == 0}}">
+                            <view class="position-item position-disabled" style="left: {{item.width}}px; top: {{item.height}}px;"></view>
+                            </block>
+                            <block wx:elif="{{item.status && index == position_check_key}}">
+                            <view class="position-item position-check" style="left: {{item.width}}px; top: {{item.height}}px;"><text class="iconfont iconxuanze"></text></view>
+                            </block>
+                            <block wx:elif="{{item.status == 1 && index != position_check_key}}">
+                            <view class="position-item" style="left: {{item.width}}px; top: {{item.height}}px;" bindtap="bindPosition" data-index="{{index}}"></view>
+                            </block>
+                            <block wx:elif="{{item.status == 2}}">
+                            <view class="position-item position-checked" style="left: {{item.width}}px; top: {{item.height}}px;"><text class="iconfont iconxuanze"></text></view>
+                            </block>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            </block>
+            <view class="weui-form-preview__ft">
+                <button class="weui-form-preview__btn weui-form-preview__btn_primary" bindtap="buy">我要预约</button>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{copyright}}">
+    <view class="weui-footer" style="margin-top: -40px;">
+        <view class="weui-footer__text">{{copyright}}</view>
+    </view>
+    </block>
+</view>

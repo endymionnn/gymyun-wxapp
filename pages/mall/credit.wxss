@@ -1,0 +1,72 @@
+.cate-item {
+    width: 100%;
+    white-space: nowrap;
+    padding-top: 30rpx;
+    clear: both;
+}
+
+.cate .cate-item .item {
+    display: inline-block;
+    margin: 0 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ccc;
+}
+.cate .cate-item .item-a {
+    color: #000;
+}
+
+.item-title {
+    margin: 30rpx;
+    font-size: 36rpx;
+    color: #000;
+    clear: both;
+}
+.credit{
+    background-color: #fff;
+    margin-top: 20rpx;
+}
+.credit .item-title {
+    float: left;
+}
+.credit .item-more {
+    float: right;
+    margin: 30rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+.credit .weui-panel__bd {
+    clear: both;
+}
+.credit .weui-media-box__thumb {
+    border-radius: 2px;
+}
+.credit .weui-media-box_appmsg{
+    border: 1px solid #f1f1f1;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    border-radius: 10px;
+    margin-bottom: 30rpx;
+}
+.credit .weui-media-box__hd_in-appmsg {
+    width: 80px;
+    height: 80px;
+}
+.credit .weui-progress {
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.credit .btn {
+    clear: both;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    margin-bottom: -20px;
+}
+.credit .btn text{
+    background: #f0ad4e;
+    padding: 4px 7px;
+    margin-right: 10px;
+    border-radius: 3px;
+    color: #fff;
+}

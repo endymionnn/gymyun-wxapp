@@ -1,0 +1,136 @@
+page{
+    background-color: #fafafa;
+}
+
+.group-view .view-top {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+}
+
+.group-view .view-top .a {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    background: rgba(0,0,0,0.5);
+    font-size: 36rpx;
+    line-height: 52rpx;
+    color: #fff;
+    font-weight: 700;
+}
+
+.group-view .view-box {
+    margin: 0 15px;
+    position: relative;
+    top: -40px;
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 2px 1px rgba(0,0,0, 0.05);
+}
+
+.group-view .group_coach {
+    width: 90%;
+    height: 80px;
+    position: relative;
+    margin: 10px auto;
+}
+
+.group-view .group_coach .img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.group-view .group_content {
+    margin-left: 80px;
+}
+
+.group-view .group_content .name {
+    height: 30px;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    overflow: hidden;
+    color: #000;
+}
+
+.group-view .group_content .desc {
+    height: 40px;
+    line-height: 40rpx;
+    font-size: 24rpx;
+    overflow: hidden;
+    color: #666;
+    padding-right: 20px;
+}
+
+.group-view .weui-form-preview__btn_primary {
+    color: #fff;
+    background: #0096ff;
+}
+
+.group-view .btn_c62bff {
+    color: #fff;
+    background: #0096ff;
+}
+
+.group-view .btn_f80 {
+    color: #fff;
+    background: #f80;
+}
+
+.group-view .btn_eaeaea {
+    color: #fff;
+    background: #969696;
+}
+.orig{
+    font-size: 24rpx;
+    color: #999;
+    margin-left: 10rpx;
+    text-decoration:line-through;
+    font-style:italic;
+}
+.c_price {
+    font-size: 40rpx;
+    color: #F0AD4E;
+    margin-top: 2px;
+}
+
+.c_price cite {
+    font-size: 28rpx;
+}
+
+.c_d9d9d9 {
+    color: #d9d9d9;
+}
+.weui-cells:after,.weui-cells:before{
+    display: none;
+}
+.weui-form-preview:after,.weui-form-preview:before {
+    display: none;
+}
+.view-box .weui-form-preview__value {
+    font-size: 28rpx;
+    line-height: 56rpx;
+    color: #666;
+    text-align: right;
+}
+
+.weui-form-preview__value .img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+button {
+    border-radius: 0px;
+}

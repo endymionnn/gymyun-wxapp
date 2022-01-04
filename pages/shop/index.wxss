@@ -1,0 +1,602 @@
+.swiper {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+swiper {
+    height: 200px;
+}
+
+.shop-banner {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.shop-info {
+    padding: 15px;
+    background: #FFF;
+    border-radius: 15px 15px 0 0;
+    margin-top: -20px;
+    position: relative;
+    z-index: 2;
+}
+.shop-pic {
+    width: 36px;
+    height: 36px;
+    float: left;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.shop-pic image {
+    width: 100%;
+    height: 100%;
+}
+.shop-name {
+    float: left;
+}
+
+.shop-name .name{
+    margin-left: 15px;
+    color: #333;
+    font-size: 36rpx;
+    height: 36px;
+    line-height: 72rpx;
+    overflow: hidden;
+    float: left;
+}
+
+.shop-name .navigator{
+    float: left;
+}
+
+.shop-name .p {
+    color: #fff;
+    border-radius: 12px;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 10px;
+    background: #ddd;
+    font-size: 12px;
+    float: left;
+    padding: 0 10px;
+    margin-top: 6px;
+}
+.shop-info .address{
+    font-size: 24rpx;
+    color: #888;
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.shop-info .address .iconfont{
+    margin-right: 15rpx;
+}
+.shop-info .shop_status{
+    float: right;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 24rpx;
+    background: #f9f9f9;
+}
+.shop-info .other_data{
+    margin: 20px 0 10px;
+    text-align: center;
+    color: #999;
+    border: 1px solid #eee;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-size: 24rpx;
+}
+
+.user-info {
+    padding: 15px;
+    background: #FFF;
+    z-index: 2;
+}
+.user-info .weui-cell__ft_in-access {
+    text-align: right;
+    color: #999;
+    line-height: 36px;
+    font-size: 24rpx;
+}
+.user-pic {
+    width: 36px;
+    height: 36px;
+    float: left;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.user-pic image {
+    width: 100%;
+    height: 100%;
+}
+
+.user-name {
+    float: left;
+}
+
+.user-name .nickname{
+    margin-left: 15px;
+    color: #333;
+    font-size: 36rpx;
+    height: 36px;
+    line-height: 72rpx;
+    overflow: hidden;
+    float: left;
+}
+
+.user-name .navigator{
+    float: left;
+}
+
+.user-name .level_name {
+    color: #fff;
+    border-radius: 12px;
+    height: 24px;
+    line-height: 17rpx;
+    margin-left: 10px;
+    background: #F0AD4E;
+    font-size: 12px;
+    float: left;
+    padding: 0 10px;
+    margin-top: 6px;
+}
+
+.user-name .level {
+    background-color: #0096ff;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 20px;
+    border-radius: 12px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 6px;
+}
+.user-name .level .level-name {
+    color: #fff;
+    border-radius: 12px 0px 24px 12px;
+    height: 24px;
+    line-height: 24px;
+    margin-left: -11px;
+    background: #F0AD4E;
+    font-size: 12px;
+    float: left;
+    padding: 0 10px;
+}
+.user-name .level .level-num {
+    padding: 0px 10px 0px 5px;
+    height: 24px;
+}
+
+.navigator-hover{
+    background-color: #fff;
+}
+
+.user-data {
+    padding-top: 15px;
+}
+
+.user-data .li {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+
+.user-data .li view {
+    font-size: 24rpx;
+    color: #aaa;
+}
+
+.user-data .li .p {
+    font-size: 36rpx;
+    color: #F0AD4E;
+}
+
+.user-data .li .p .cite {
+    font-size: 24rpx;
+}
+
+.item-title {
+    margin: 30rpx;
+    font-size: 36rpx;
+    color: #000;
+    clear: both;
+}
+.credit{
+    background-color: #fff;
+    padding-bottom: 20rpx;
+}
+.credit .item-title {
+    float: left;
+}
+.credit .item-more {
+    float: right;
+    margin: 34rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+.credit .weui-panel__bd {
+    clear: both;
+}
+.credit .weui-media-box__thumb {
+    border-radius: 2px;
+}
+.credit .weui-media-box_appmsg{
+    border: 1px solid #f1f1f1;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    border-radius: 10px;
+}
+.credit .weui-media-box__hd_in-appmsg {
+    width: 80px;
+    height: 80px;
+}
+.credit .weui-progress {
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+.credit .btn {
+    clear: both;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    margin-bottom: -20px;
+}
+.credit .btn text{
+    background: #f0ad4e;
+    padding: 4px 7px;
+    margin-right: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+.item-bg-rgba{
+    height: 350rpx;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.lesson-item {
+    width: 100%;
+    white-space: nowrap;
+    padding-bottom: 30rpx;
+    clear: both;
+}
+.lesson-item .item {
+    display: inline-block;
+    margin-left: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 30rpx;
+    height: 350rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+.lesson-item .item:last-child{
+    margin-right: 30rpx;
+}
+.lesson-item .item .item-lesson-title{
+    padding: 40rpx;
+    font-size: 36rpx;
+}
+.lesson-item .item .item-lesson-time{
+    padding: 20rpx 40rpx;
+    font-size: 28rpx;
+}
+.lesson-item .item .item-lesson-coach{
+    padding: 20rpx 40rpx;
+    line-height: 70rpx;
+}
+.lesson-item .item .item-lesson-coach image{
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #fff;
+    border: 1px solid #ddd;
+    margin-right: 20rpx;
+    float: left;
+}
+.coach-item {
+    width: 100%;
+    white-space: nowrap;
+    padding-bottom: 30rpx;
+    clear: both;
+}
+.coach-item .item {
+    display: inline-block;
+    margin-left: 20rpx;
+    overflow: hidden;
+    width: 450rpx;
+    height: 150rpx;
+}
+.coach-item .item:last-child{
+    margin-right: 20rpx;
+}
+.coach-item .item .item-coach-img{
+    width: 150rpx;
+    float: left;
+}
+.coach-item .item .item-coach-img image{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+.coach-item .item .item-coach-con{
+    width: 300rpx;
+    height: 150rpx;
+    float: left;
+}
+.coach-item .item .item-coach-con .item-coach-name{
+    margin-left: 30rpx;
+    font-size: 36rpx;
+}
+.coach-item .item .item-coach-con .item-coach-desc{
+    margin-left: 30rpx;
+    font-size: 24rpx;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-wrap;
+    width: 250rpx;
+    color: #999;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.shop-member .top {
+    margin: 15px 15px 0;
+    color: #333;
+    font-size: 28rpx;
+}
+.shop-member .top text {
+    margin-left: 15px;
+    padding-right: 2px;
+}
+
+.shop-member .woman {
+    color: #ff4cb1;
+    font-size: 48rpx;
+}
+
+.shop-member .man {
+    color: #467fff;
+    font-size: 48rpx;
+}
+
+.fllow-list {
+    padding: 10px 15px 20px;
+}
+
+.fllow-list .fllow-li {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 0;
+    background: #ffffff;
+}
+
+.fllow-list .fllow-li:last-child:before {
+    display: none;
+}
+
+.fllow-list .fllow-li:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #EAEBEC;
+    left: 0;
+    bottom: 0;
+}
+
+.fllow-list .fllow-li .z {
+    font-size: 28rpx;
+    line-height: 60rpx;
+}
+
+.fllow-list .fllow-li .z .img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.fllow-list .fllow-li .z text {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+.fllow-list .fllow-li .y {
+    height: 26px;
+    margin-top: 7px;
+    line-height: 54rpx;
+    border-radius: 26px;
+    padding: 0 15px;
+    font-size: 24rpx;
+    color: #fff;
+    background: #ccc;
+}
+
+.fllow-list .fllow-li .y.active {
+    background: #FF6700;
+}
+
+.article{
+    background-color: #fff;
+    padding-bottom: 20rpx;
+}
+.article .item-title {
+    float: left;
+}
+.article .item-more {
+    float: right;
+    margin: 34rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+.article-box{
+    clear: both;
+    position: relative;
+    height: 64rpx;
+    line-height: 64rpx;
+    padding: 0 30rpx;
+    overflow: hidden;
+    color: #999;
+    font-size: 28rpx;
+}
+.article-box .item{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card{
+    background-color: #fff;
+    padding-bottom: 20rpx;
+}
+.card .item-title {
+    float: left;
+}
+.card .item-more {
+    float: right;
+    margin: 34rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+.card-item {
+    width: 100%;
+    white-space: nowrap;
+    padding-bottom: 30rpx;
+    clear: both;
+}
+.card .card-item .item {
+    display: inline-block;
+    margin-left: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 30rpx;
+    height: 350rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+.card .card-item .item:last-child{
+    margin-right: 30rpx;
+}
+.card .card-item .item .item-card-name{
+    padding: 40rpx;
+    font-size: 48rpx;
+}
+.card .card-item .item .item-card-price{
+    padding: 20rpx;
+    font-size: 48rpx;
+}
+.card .card-item .item .item-card-price text{
+    margin-left: 10px;
+    font-size: 36rpx;
+    text-decoration:line-through;
+    font-style:italic;
+    color: #f8f8f8;
+}
+.card .card-item .item .item-card-remark{
+    font-size: 24rpx;
+    font-style:italic;
+    color: #f8f8f8;
+    text-align: right;
+}
+.card .card-item .item .item-card-remark text{
+    margin-right: 20rpx;
+}
+.space-item {
+    width: auto;
+    white-space: nowrap;
+    margin: 0px 10px;
+    clear: both;
+}
+.card .space-item .item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 30rpx;
+    height: 350rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+}
+.card .space-item .item .item-card-status{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #fff;
+    font-size: 24rpx;
+    padding: 3px 6px;
+    border-radius: 0 0 0 4px;
+}
+.card .space-item .item .item-card-name{
+    padding: 40rpx;
+    font-size: 48rpx;
+}
+.card .space-item .item .item-card-price{
+    padding: 20rpx;
+    font-size: 48rpx;
+}
+.card .space-item .item .item-card-price text{
+    margin-left: 10px;
+    font-size: 36rpx;
+    text-decoration:line-through;
+    font-style:italic;
+    color: #f8f8f8;
+}
+.card .space-item .item .item-card-remark{
+    font-size: 24rpx;
+    font-style:italic;
+    color: #f8f8f8;
+    text-align: right;
+}
+.card .space-item .item .item-card-remark text{
+    margin-right: 20rpx;
+}
+.activity-money{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    text-align: center;
+    font-size: 24rpx;
+    height: 96rpx;
+    width: 120rpx;
+    z-index: 999;
+    background-color: #ff8c00;
+    color: #fff;
+    border-radius: 20rpx 0 0 20rpx;
+}
+.tag view{
+    padding: 3px 8px;
+    font-size: 20rpx;
+    border-radius: 4px;
+    border: 1px solid rgba(0,0,0,0.1);
+    float: left;
+    margin-right: 8px;
+    margin-top: 10px;
+    color: #333;
+}

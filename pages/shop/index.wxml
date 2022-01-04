@@ -1,0 +1,329 @@
+<block wx:if="{{shop}}">
+<view class="swiper" style="background-image:url({{shop.banner}})">
+    <swiper autoplay="true" circular="true">
+        <block wx:for="{{shop.slide}}" wx:key="index" wx:item="item">
+            <swiper-item>
+                <image src="{{item}}" style="width: 100%; height: 200px;"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="shop-info">
+    <view class="cl">
+        <view class="shop-pic z">
+            <image src="{{shop.logo}}"></image>
+        </view>
+        <view class="shop-name">
+            <view class="name"><navigator url="/pages/shop/show?id={{shop.id}}" open-type="{{opentype}}" hover-class="none">{{shop.name}}</navigator></view>
+            <text class="p" bindtap="openPosition" data-lat="{{shop.lat}}" data-lng="{{shop.lng}}" data-name="{{shop.name}}" wx:if="{{shop.position_unit}}">{{shop.position_unit}}</text>
+        </view>
+    </view>
+    <view class="tag" wx:if="{{shop.tag}}">
+        <block wx:for="{{shop.tag}}" wx:key="index" wx:item="item">
+        <view>{{item}}</view>
+        </block>
+    </view>
+    <view class="weui-flex cl">
+        <view class="weui-flex__item">
+            <view class="address" bindtap="phoneCall" data-phone="{{shop.phone}}" wx:if="{{shop.phone}}"><text class="iconfont icondianhua"></text>{{shop.phone}}</view>
+            <view class="address" wx:if="{{shop.yy_time}}"><text class="iconfont icontime"></text>{{shop.yy_time}}</view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="shop_status" style="color: {{shop.online_info.color}}" wx:if="{{shop.max_num}}">
+                {{shop.online_info.msg}}
+            </view>
+        </view>
+    </view>
+    <view class="address" bindtap="openPosition" data-lat="{{shop.lat}}" data-lng="{{shop.lng}}" data-name="{{shop.name}}"><text class="iconfont icondizhi"></text>{{shop.address}}</view>
+    <view class="other_data" wx:if="{{shop.other_data}}">
+        <view class="weui-flex">
+            <view class="weui-flex__item">检测项</view>
+            <view class="weui-flex__item">当前值</view>
+            <view class="weui-flex__item">标准值</view>
+        </view>
+        <block wx:for="{{shop.other_data}}" wx:key="index" wx:item="item">
+        <view class="weui-flex" style="padding-top: 10px;">
+            <view class="weui-flex__item">{{item.name}}</view>
+            <view class="weui-flex__item">{{item.value}}</view>
+            <view class="weui-flex__item">{{item.value_}}</view>
+        </view>
+        </block>
+    </view>
+</view>
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="user-info">
+    <view class="cl">
+        <view class="user-pic z">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="user-name">
+            <navigator url="/pages/card/index?shop_id={{shop.id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+                <text class="level_name">
+                    <block wx:if="{{member.get_vip}}">
+                    购买会员卡
+                    </block>
+                    <block wx:else>
+                    {{member.level_name}}
+                    </block>
+                </text>
+            </navigator>
+        </view>
+        <navigator url="/pages/shop/online?id={{shop.id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="weui-cell__ft_in-access">在线会员</view>
+        </navigator>
+    </view>
+    <navigator url="/pages/shop/online?id={{shop.id}}" class="navigator" open-type="{{opentype}}" hover-class="none" wx:if="{{order_gym}}">
+        <view class="user-data cl">
+            <view class="li">
+                <text class="p">{{time}}<text class="cite">分钟</text></text>
+                <view>目前时长</view>
+            </view>
+            <view class="li">
+                <text class="p">{{pay}}<text class="cite">元</text></text>
+                <view>目前消费</view>
+            </view>
+            <view class="li">
+                <text class="p">{{total_time}}<text class="cite">小时</text></text>
+                <view>累计时长</view>
+            </view>
+        </view>
+    </navigator>
+</view>
+
+<block wx:if="{{article}}">
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="article">
+    <view class="header">
+        <navigator class="item-title" url="/pages/article/index?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">读物/公告</navigator>
+        <navigator class="item-more link-show-jump" url="/pages/article/index?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">更多</navigator>
+    </view>
+    <swiper class='article-box' autoplay='{{true}}' vertical='{{true}}' circular='{{true}}'>
+        <block wx:for="{{article}}" wx:key="index" wx:item="item">
+        <swiper-item class='item'>
+            <navigator url="/pages/article/view?id={{item.id}}" open-type="{{opentype}}" hover-class="none">{{item.title}}</navigator>
+        </swiper-item>
+        </block>
+    </swiper>
+</view>
+</block>
+
+<block wx:if="{{card}}">
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="card">
+    <view class="header">
+        <navigator class="item-title" url="/pages/card/index?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">推荐会员卡</navigator>
+        <navigator class="item-more link-show-jump" url="/pages/card/index?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">更多</navigator>
+    </view>
+    <scroll-view scroll-x="true" class="card-item">
+    <block wx:for="{{card}}" wx:key="index" wx:item="item">
+        <navigator class="item" url="/pages/card/view?id={{item.id}}&shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none" style="width: {{width_card}}rpx; background-image: url({{item.bgimg}})">
+            <view class="item-bg-rgba">
+                <view class="item-card-name">{{item.name}}</view>
+                <view class="item-card-price">￥{{item.price}}<text wx:if="{{item.orig > 0}}">￥{{item.orig}}</text></view>
+                <view class="item-card-remark">
+                    <text>有效期：{{item.month}}个月</text>
+                    <text wx:if="{{item.type == 2 && item.can_use > 0}}">可使用：{{item.can_use}}次</text>
+                </view>
+            </view>
+        </navigator>
+    </block>
+    </scroll-view>
+</view>
+</block>
+
+<block wx:if="{{card_group}}">
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="card">
+    <view class="header">
+        <navigator class="item-title" url="/pages/groupcard/index?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">推荐团课卡</navigator>
+        <navigator class="item-more link-show-jump" url="/pages/groupcard/index?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">更多</navigator>
+    </view>
+    <scroll-view scroll-x="true" class="card-item">
+    <block wx:for="{{card_group}}" wx:key="index" wx:item="item">
+        <navigator class="item" url="/pages/groupcard/view?id={{item.id}}&shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none" style="width: {{w_card_group}}rpx; background-image: url({{item.bgimg}})">
+            <view class="item-bg-rgba">
+                <view class="item-card-name">{{item.name}}</view>
+                <view class="item-card-price">￥{{item.price}}<text wx:if="{{item.orig > 0}}">￥{{item.orig}}</text></view>
+                <view class="item-card-remark">
+                    <text>有效期：{{item.month}}个月</text>
+                    <text wx:if="{{item.can_use > 0}}">可使用：{{item.can_use}}次</text>
+                </view>
+            </view>
+        </navigator>
+    </block>
+    </scroll-view>
+</view>
+</block>
+
+<block wx:if="{{credit}}">
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="credit">
+    <view class="header">
+        <navigator class="item-title" url="/pages/mall/credit?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">微商城</navigator>
+        <navigator class="item-more link-show-jump" url="/pages/mall/credit?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">更多</navigator>
+    </view>
+    <view class="weui-panel__bd">
+        <navigator url="/pages/mall/creditview?id={{credit.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="none">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{credit.pic}}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{credit.title}}</view>
+                <view class="weui-media-box__desc">
+                    <view class="weui-progress">
+                        <view class="weui-progress__bar">
+                            <progress percent="{{credit.percent}}" stroke-width="8" activeColor="{{credit.color}}"/>
+                        </view>
+                    </view>
+                    <view class="btn">
+                        <text wx:if="{{credit.credit > 0}}">{{credit.credit}}积分</text>
+                        <text wx:if="{{credit.money > 0}}">￥{{credit.money}}</text>
+                    </view>
+                    <button class="weui-btn mini-btn" type="primary" size="mini"></button>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+</block>
+<block wx:if="{{show_coach}}">
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="item-title">教练推荐</view>
+<scroll-view scroll-x="true" class="coach-item">
+    <block wx:for="{{coach}}" wx:key="index" wx:item="item">
+    <navigator class="item" url="/pages/coach/show?id={{item.id}}" open-type="{{opentype}}" hover-class="none">
+        <view class="item-coach-img"><image src="{{item.pic}}"></image></view>
+        <view class="item-coach-con">
+            <view class="item-coach-name">{{item.realname}}</view>
+            <view class="item-coach-desc">{{item.description}}</view>
+        </view>
+    </navigator>
+    </block>
+</scroll-view>
+</block>
+
+<block wx:if="{{show_lesson}}">
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="item-title">私教课程推荐</view>
+<scroll-view scroll-x="true" class="lesson-item">
+    <block wx:for="{{lesson}}" wx:key="index" wx:item="item">
+    <navigator class="item" url="/pages/coach/view?id={{item.id}}" open-type="{{opentype}}" hover-class="none" style="width: {{width_lesson}}rpx; background-image: url({{item.lpic}})">
+        <view class="item-bg-rgba">
+            <view class="item-lesson-title">{{item.title}}</view>
+            <view class="item-lesson-time">￥{{item.price}} / {{item.num}}课时</view>
+            <view class="item-lesson-coach">
+                <image src="{{item.pic}}"></image><text>{{item.realname}}</text>
+            </view>
+        </view>
+    </navigator>
+    </block>
+</scroll-view>
+</block>
+
+<block wx:if="{{show_group}}">
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="item-title">今日团课</view>
+<scroll-view scroll-x="true" class="lesson-item" >
+    <block wx:for="{{group}}" wx:key="index" wx:item="item">
+    <navigator class="item" url="/pages/group/view?id={{item.id}}" open-type="{{opentype}}" hover-class="none" style="width: {{width_group}}rpx; background-image: url({{item.lpic}})">
+        <view class="item-bg-rgba">
+            <view class="item-lesson-title">{{item.title}}</view>
+            <view class="item-lesson-time">{{item.time_hour_s}} ~ {{item.time_hour_e}}</view>
+            <view class="item-lesson-coach">
+                <image src="{{item.pic}}"></image><text>{{item.realname}}</text>
+            </view>
+        </view>
+    </navigator>
+    </block>
+</scroll-view>
+</block>
+<block wx:if="{{show_space}}">
+<view style="height: 10px; background: #fafafa;"></view>
+<view class="card">
+    <view class="header">
+        <navigator class="item-title" url="/pages/space/index?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">预约/包场</navigator>
+        <navigator class="item-more link-show-jump" url="/pages/space/index?shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none">更多</navigator>
+    </view>
+    <view class="space-item">
+    <block wx:for="{{space}}" wx:key="index" wx:item="item">
+        <navigator class="item" url="/pages/space/view?id={{item.id}}&shop_id={{shop.id}}" open-type="{{opentype}}" hover-class="none" style="background-image: url({{item.pic}})">
+            <view class="item-bg-rgba">
+                <view class="item-card-status" style="background: {{item.status.color}}">{{item.status.msg}}</view>
+                <view class="item-card-name">{{item.title}}</view>
+                <view class="item-card-price">￥{{item.price}} / 小时</view>
+                <view class="item-card-remark">
+                    <block wx:if="{{item.type == 1}}">
+                    <text>室内</text>
+                    </block>
+                    <block wx:else>
+                    <text>室外</text>
+                    </block>
+
+                    <block wx:if="{{item.num}}">
+                    <text>适用人数：{{item.num}}人</text>
+                    </block>
+                    <block wx:else>
+                    <text>适用人数：无限制</text>
+                    </block>
+                </view>
+            </view>
+        </navigator>
+    </block>
+    </view>
+</view>
+</block>
+
+<view class="activity-money" wx:if="{{activity_money}}">
+    <navigator url="/pages/member/money" class="navigator" open-type="{{opentype}}" hover-class="none">
+        <view class="iconfont iconjifenduihuan"></view>
+        <text>充值送</text>
+    </navigator>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>
+
+<view class="footer-box"></view>
+
+<view class="footer">
+    <block wx:if="{{show_faxian}}">
+    <view class="li">
+        <navigator url="/pages/index/index" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconyemian-copy"></view>
+            <text>发现</text>
+        </navigator>
+    </view>
+    </block>
+    <view class="li on">
+        <navigator url="/pages/shop/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconhotel"></view>
+            <text>门店</text>
+        </navigator>
+    </view>
+    <block wx:if="{{lesson_coach}}">
+    <view class="li">
+        <navigator url="/pages/coach/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconjianshenjiaolian"></view>
+            <text>私教</text>
+        </navigator>
+    </view>
+    </block>
+    <block wx:if="{{lesson_group}}">
+    <view class="li">
+        <navigator url="/pages/group/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont icontuandui"></view>
+            <text>团课</text>
+        </navigator>
+    </view>
+    </block>
+    <view class="li">
+        <navigator url="/pages/member/index" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconIcon_wodeB"></view>
+            <text>我的</text>
+        </navigator>
+    </view>
+</view>
+</block>

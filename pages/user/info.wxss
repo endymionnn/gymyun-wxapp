@@ -1,0 +1,10 @@
+.weui-cell__hd,.weui-cell__bd{
+    font-size: 32rpx;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.placeholder{
+    color: #ddd;
+    font-size: 24rpx;
+    text-align: left;
+}

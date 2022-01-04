@@ -1,0 +1,36 @@
+.list-main {
+    padding-bottom: 10px;
+}
+
+.list-box {
+    background: #fff;
+    padding: 10px;
+}
+
+.list-box .left-pic {
+    width: 129px;
+    height: 86px;
+    border-radius: 6px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.list-box .right-info {
+    margin-left: 144px;
+}
+
+.list-box .right-info .h6 {
+    font-size: 32rpx;
+    color: #333;
+    line-height: 52rpx;
+}
+
+.list-box .right-info .p {
+    line-height: 40rpx;
+    height: 20px;
+    font-size: 26rpx;
+    color: #999;
+    padding-top: 10px;
+}

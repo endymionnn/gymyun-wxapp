@@ -1,0 +1,126 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="group-view">
+    <view class="view-top" style="background-image: url({{data.lpic}})"></view>
+    <view class="view-box">
+        <view class="group_coach">
+            <navigator url="/pages/coach/show?id={{data.coach_id}}" class="a link-show-jump" open-type="{{opentype}}" hover-class="none">
+                <image src="{{data.pic}}" class="img"></image>
+                <view class="group_content">
+                    <view class="name">{{data.realname}}</view>
+                    <view class="desc wrap2">{{data.description}}</view>
+                </view>
+            </navigator>
+        </view>
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item cl">
+                    <view class="weui-form-preview__label">价格</view>
+                    <view class="weui-form-preview__value">
+                        <text class="c_price">{{data.price}}</text>
+                        <text class="orig" wx:if="{{data.orig > 0}}">￥{{data.orig}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd" wx:if="{{data.price != data.vip}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">会员价</view>
+                    <view class="weui-form-preview__value" style="color: #330033">{{data.vip}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">预约人数</view>
+                    <view class="weui-form-preview__value" style="color: #330033">{{data.num}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd" wx:if="{{data.for_day}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">可预约时间</view>
+                    <view class="weui-form-preview__value" style="color: #330033">{{data.for_day}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程</view>
+                    <view class="weui-form-preview__value">
+                        <navigator url="/pages/lesson/show?id={{data.lesson_id}}" class="a link-show-jump" open-type="{{opentype}}" hover-class="none">
+                            {{data.title}}
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">上课时间</view>
+                    <view class="weui-form-preview__value">{{data.time_str}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">预约截止时间</view>
+                    <view class="weui-form-preview__value">{{data.time_join_e}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">门店</view>
+                    <view class="weui-form-preview__value">
+                        <navigator url="/pages/shop/index?id={{data.shop_id}}" class="a link-show-jump" open-type="{{opentype}}" hover-class="none">
+                        {{data.name}}
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">上课地点</view>
+                    <view class="weui-form-preview__value">
+                        <view bindtap="openPosition" data-lat="{{data.lat}}" data-lng="{{data.lng}}" data-name="{{data.name}}" class="link-show-jump">{{data.address}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">最近预约</view>
+                    <view class="weui-form-preview__value">
+                        <block wx:if="{{is_list}}">
+                            <block wx:for="{{list}}" wx:key="index" wx:item="item">
+                            <image src="{{item.headimgurl}}" class="img"></image>
+                            </block>
+                        </block>
+                        <block wx:else>
+                        <text>暂无人预约</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <block wx:if="{{status == 1}}">
+                <view class="weui-form-preview__btn btn_c62bff">您已预约过了</view>
+                </block>
+                <block wx:elif="{{status == 2}}">
+                <view class="weui-form-preview__btn btn_f80">已经满员了</view>
+                </block>
+                <block wx:elif="{{status == 3}}">
+                <view class="weui-form-preview__btn btn_eaeaea">课程已过期</view>
+                </block>
+                <block wx:elif="{{status == 4}}">
+                <view class="weui-form-preview__btn btn_eaeaea">未开始预约</view>
+                </block>
+                <block wx:else>
+                <form bindsubmit="formSubmit" report-submit="true" style="width: 100%">
+                    <button form-type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary">我要预约</button>
+                </form>
+                </block>
+            </view>
+        </view>
+    </view>
+
+    <block wx:if="{{copyright}}">
+    <view class="weui-footer" style="margin-top: -40px;">
+        <view class="weui-footer__text">{{copyright}}</view>
+    </view>
+    </block>
+
+</view>

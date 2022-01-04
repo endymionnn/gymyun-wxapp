@@ -1,0 +1,41 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view wx:if="{{show}}">
+    <view class="pay-main cl">
+        <view class="pay-tips">需要支付金额：</view>
+        <view class="pay-price">
+            <text class="cite">￥</text>{{pay.total}}
+        </view>
+        <view class="pay-list">
+            <block wx:if="{{user.money > 0}}">
+            <view class="li">
+                账户余额
+                <text class="span">
+                    <text class="cite">￥</text>
+                    <text class="em">{{user.money}}</text>
+                </text>
+            </view>
+            </block>
+            <block wx:if="{{shop}}">
+            <view class="li">
+                门店
+                <text class="em">{{shop.name}}</text>
+            </view>
+            </block>
+            <view class="li">
+                付款说明
+                <text class="em">{{pay.title}}</text>
+            </view>
+            <view style="clear: both;"></view>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="pay">确定</button>
+        </view>
+    </view>
+
+    <block wx:if="{{copyright}}">
+    <view class="weui-footer">
+        <view class="weui-footer__text">{{copyright}}</view>
+    </view>
+    </block>
+</view>

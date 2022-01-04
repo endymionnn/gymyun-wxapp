@@ -1,0 +1,120 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="coach-view">
+    <view class="view-top" style="background-image: url({{data.bgimg}})"></view>
+    <view class="view-box">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">卡名称</view>
+                    <view class="weui-form-preview__value">{{data.name}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">价格</view>
+                    <view class="weui-form-preview__value">
+                        <text class="c_price"><text class="f_14">￥</text>{{data.price}}</text>
+                        <block wx:if="{{data.orig > 0}}">
+                        <text class="orig">￥{{data.orig}}</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">可用门店</view>
+                    <view class="weui-form-preview__value">
+                        <block wx:for="{{data.shop}}" wx:key="index" wx:item="item">
+                        <navigator url="/pages/shop/index?id={{item.id}}" class="a link-show-jump" open-type="{{opentype}}" hover-class="none">{{item.name}}</navigator>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">课程使用范围</view>
+                    <view class="weui-form-preview__value">
+                        <block wx:for="{{data.lesson}}" wx:key="index" wx:item="item">
+                        <navigator url="/pages/lesson/show?id={{item.id}}" class="a link-show-jump" open-type="{{opentype}}" hover-class="none">{{item.title}}</navigator>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd" wx:if="{{data.month > 0}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">过期时间</view>
+                    <view class="weui-form-preview__value">{{data.month}}月</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd" wx:if="{{data.credit > 0}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购买可获得积分</view>
+                    <view class="weui-form-preview__value">{{data.credit}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd" wx:if="{{data.tui_money > 0}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">分享有机会获得</view>
+                    <view class="weui-form-preview__value">￥{{data.tui_money}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">可用次数</view>
+                    <view class="weui-form-preview__value">{{data.can_use}}次</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">最近购买</view>
+                    <view class="weui-form-preview__value">
+                        <block wx:if="{{is_list}}">
+                            <block wx:for="{{list}}" wx:key="index" wx:item="item">
+                            <image src="{{item.headimgurl}}" class="img"></image>
+                            </block>
+                        </block>
+                        <block wx:else>
+                        <text>暂无</text>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{copyright}}">
+    <view class="weui-footer" style="margin-top: -40px;">
+        <view class="weui-footer__text">{{copyright}}</view>
+    </view>
+    </block>
+    <poster id="poster" config="{{poster}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+        <view class="share_qrcode" bindtap="saveCard">
+            <text class="iconfont iconfenxiang1"></text>
+        </view>
+    </poster>
+</view>
+<view class="share_qrcode_img" wx:if="{{share_qrcode_img}}">
+    <image class="qrcode_img" src="{{share_qrcode_img}}" bindtap="clearQrcode"></image>
+    <view class="save_qrcode" bindtap="saveQrcode">保存到相册</view>
+</view>
+<view class="footer-box"></view>
+<view class="weui-btn-area">
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+            <checkbox-group bindchange="bindAgreeChange" style="float: left;">
+                <label class="weui-agree" for="weuiAgree">
+                    <view class="weui-agree__text">
+                        <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                        <view class="weui-agree__checkbox-icon">
+                            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                        </view>
+                        阅读并同意
+                    </view>
+                </label>
+            </checkbox-group>
+            <view class="weui-agree__text">
+                <navigator url="/pages/contract/showtpl?id={{data.cid}}" open-type="{{opentype}}" hover-class="none" class="weui-agree__link">《业务协议》</navigator>
+            </view>
+        </view>
+        <button class="btn-info" type="info" open-type="contact"><view class="i iconfont icontubiao-"></view></button>
+        <button class="btn-primary" bindtap="buy">购买</button>
+    </view>
+</view>

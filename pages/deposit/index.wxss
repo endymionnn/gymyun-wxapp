@@ -1,0 +1,72 @@
+.body{
+    background-color: #fff;
+}
+.body .box{
+    margin: 20px 20px;
+    background: #222;
+    min-height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.shop .name{
+    color: #fff;
+    font-size: 32rpx;
+    float: left;
+    margin-top: 32px;
+    margin-left: 10px;
+}
+.shop .img{
+    width:64rpx;
+    height: 64rpx;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 26px;
+    margin-bottom: 26px;
+    margin-left: 20px;
+    box-shadow: 0 0 10px #fff;
+    border: 1px solid #fff;
+    float: left;
+}
+.box-line{
+    clear: both;
+    position: relative;
+    height: 20px;
+    margin-top: 20px;
+}
+.box-line .left{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.box-line .line{
+    position: absolute;
+    height: 10px;
+    left: 0;
+    right: 0;
+    border-bottom: 1px dashed #fff;
+}
+.box-line .right{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.money{
+    color: #fff;
+    font-size: 48rpx;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.money-tips{
+    color: #fff;
+    font-size: 24rpx;
+    text-align: center;
+    margin-bottom: 20px;
+}

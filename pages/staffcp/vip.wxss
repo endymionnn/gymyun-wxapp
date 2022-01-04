@@ -1,0 +1,14 @@
+.weui-search-bar{
+    background: #fff;
+    border: 0px;
+}
+.weui-cells:before {
+  border-top:none;
+}
+.weui-cells:after{
+    border-bottom: none;
+}
+.info{
+    font-size: 24rpx;
+    color: #999;
+}

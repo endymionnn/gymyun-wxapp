@@ -1,0 +1,14 @@
+<view class="navbar-box" style="background: {{navigationBarBackgroundColor}}; padding-top:{{statusBarHeight}}px">
+    <view class="navbar-container">
+        <view class="navbar-capsule">
+            <view class="navbar-capsule-back" bindtap="back">
+                <text class="iconfont iconback"></text>
+            </view>
+            <view class="navbar-capsule-home" bindtap="home">
+                <text class="iconfont iconhome"></text>
+            </view>
+        </view>
+        <view class="navbar-title">{{navigationBarTitle}}</view>
+    </view>
+</view>
+<view class="navbar-empty-custom" style="padding-top:{{statusBarHeight}}px"></view>

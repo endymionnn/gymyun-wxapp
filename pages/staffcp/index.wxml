@@ -1,0 +1,118 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+            <view class="headimg"><open-data type="userAvatarUrl"></open-data></view>
+        </view>
+        <view class="weui-cell__bd">
+            <view class="nickname">{{staff.realname}}</view>
+            <view class="desc">工号：{{staff.job_num}}</view>
+        </view>
+    </view>
+</view>
+
+<view class="tools">
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+            <navigator url="/pages/staffcp/add" open-type="{{opentype}}" hover-class="none">
+                <text class="i iconfont icondengji"></text>
+                <text class="text">客户登记</text>
+            </navigator>
+        </view>
+        <view class="weui-flex__item">
+            <navigator url="/pages/staffcp/membership" open-type="{{opentype}}" hover-class="none">
+                <view class="i iconfont iconbiji"></view>
+                <text class="text">客户管理</text>
+            </navigator>
+        </view>
+        <view class="weui-flex__item">
+            <navigator url="/pages/staffcp/reservation" open-type="{{opentype}}" hover-class="none">
+                <view class="i iconfont iconyuyue"></view>
+                <text class="text">我的预约</text>
+            </navigator>
+        </view>
+        <view class="weui-flex__item">
+            <navigator url="/pages/staffcp/vip" open-type="{{opentype}}" hover-class="none">
+                <view class="i iconfont iconhuiyuan1"></view>
+                <text class="text">会员管理</text>
+            </navigator>
+        </view>
+    </view>
+</view>
+
+<view class="data">
+    <view class="weui-cells__title">总览</view>
+    <view class="weui-cells">
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+                <view class="p">总客户数</view>
+                <view class="d">
+                    <text class="big">{{add_total}}</text>人
+                </view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="p">客户维护</view>
+                <view class="d">
+                    <text class="big">{{exp_total}}</text>次
+                </view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="p">预约客户</view>
+                <view class="d">
+                    <text class="big">{{ordered_total}}</text>次
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="data">
+    <view class="weui-cells__title">今日简报 / 昨日简报</view>
+    <view class="weui-cells">
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+                <view class="p">新增客户</view>
+                <view class="d">
+                    <text class="big">{{add_t}}</text>人 / <text class="info">{{add_y}}人</text>
+                </view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="p">客户维护</view>
+                <view class="d">
+                    <text class="big">{{exp_t}}</text>人 / <text class="info">{{exp_y}}人</text>
+                </view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="p">预约客户</view>
+                <view class="d">
+                    <text class="big">{{ordered_t}}</text>人 / <text class="info">{{ordered_y}}人</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="data">
+    <view class="weui-cells__title">本月业绩 / 上月业绩</view>
+    <view class="weui-cells">
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+                <view class="p">总成交数</view>
+                <view class="d">
+                    <text class="big">0</text>人 / <text class="info">0人</text>
+                </view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="p">总成交额</view>
+                <view class="d">
+                    ￥<text class="big">0</text> / <text class="info">￥0</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

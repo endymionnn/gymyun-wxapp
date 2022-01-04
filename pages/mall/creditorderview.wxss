@@ -1,0 +1,118 @@
+.qrcode-box {
+    position: relative;
+    width: 100%;
+    padding: 30px 0px;
+    color: #333;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.qrcode-box .span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.qrcode-box:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.qrcode-box .p {
+    line-height: 48rpx;
+    padding-top: 5px;
+    font-size: 32rpx;
+    position: relative;
+    z-index: 3;
+}
+
+.qrcode-pic {
+    z-index: 3;
+    padding-bottom: 2px;
+}
+
+.qrcode-pic .img {
+    width: 130px;
+    height: 130px;
+}
+
+.verify-subtitle {
+    margin-top: 10px;
+    border-bottom: 1px solid #EAEBEC;
+    background: #fff;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    padding: 0 15px;
+    color: #584f60;
+}
+
+.verify-box {
+    border-bottom: 1px soild #EAEBEC;
+    background: #fff;
+}
+
+.verify-box .a {
+    display: block;
+    padding: 12px 15px;
+}
+
+.verify-box .pic {
+    float: left;
+    width: 48px;
+    height: 48px;
+}
+
+.verify-box .pic .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.05);
+}
+.verify-box .lesson_pic .img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.05);
+}
+
+.verify-box .info {
+    margin-left: 58px;
+}
+
+.verify-box .info .h6 {
+    font-size: 30rpx;
+    line-height: 46rpx;
+    height: 23px;
+    color: #584f60;
+}
+
+.verify-box .info .p {
+    font-size: 24rpx;
+    line-height: 36rpx;
+    height: 18px;
+    margin-top: 6px;
+    color: #656565;
+}
+
+.verify-box .info .h6,.verify-box .info .p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

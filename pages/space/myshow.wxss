@@ -1,0 +1,243 @@
+.qrcode-box {
+    position: relative;
+    width: 100%;
+    padding: 30px 0px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.qrcode-box .span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.qrcode-box:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.qrcode-box .p {
+    line-height: 48rpx;
+    padding-top: 5px;
+    font-size: 32rpx;
+    position: relative;
+    z-index: 3;
+}
+
+.qrcode-pic {
+    z-index: 3;
+    padding-bottom: 2px;
+}
+
+.qrcode-pic .img {
+    width: 130px;
+    height: 130px;
+}
+
+.verify-subtitle {
+    margin-top: 10px;
+    border-bottom: 1px solid #EAEBEC;
+    background: #fff;
+    line-height: 80rpx;
+    font-size: 28rpx;
+    padding: 0 15px;
+    color: #584f60;
+}
+.info-box{
+    border-bottom: 1px soild #EAEBEC;
+    background: #fff;
+    clear: both;
+    margin: 15px;
+}
+.info-box .h6{
+    font-size: 28rpx;
+    line-height: 46rpx;
+    height: 23px;
+    color: #584f60;
+}
+.info-box .p{
+    font-size: 24rpx;
+    line-height: 36rpx;
+    height: 18px;
+    margin-top: 6px;
+    color: #656565;
+}
+.verify-box {
+    border-bottom: 1px soild #EAEBEC;
+    background: #fff;
+    clear: both;
+    margin-right: 15px;
+}
+
+.verify-box .a {
+    display: block;
+    padding: 12px 15px;
+}
+
+.verify-box .pic {
+    float: left;
+    width: 48px;
+    height: 48px;
+}
+
+.verify-box .pic .img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.05);
+}
+.verify-box .lesson_pic .img {
+    width: 48px;
+    height: 48px;
+    float: left;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.05);
+}
+.verify-box .info {
+    margin-left: 58px;
+}
+.verify-box .info .h6 {
+    font-size: 30rpx;
+    line-height: 46rpx;
+    height: 23px;
+    color: #584f60;
+}
+
+.verify-box .info .p {
+    font-size: 24rpx;
+    line-height: 36rpx;
+    height: 18px;
+    margin-top: 6px;
+    color: #656565;
+}
+
+.verify-box .info .h6,.verify-box .info .p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.weui-cell__hd .img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.weui-cell__bd {
+    padding-left: 10px;
+}
+.weui-cell__bd .p{
+    font-size: 24rpx;
+    color: #999;
+}
+
+.weui-btn-area button {
+    border: none;
+    border-radius: 0px;
+}
+.weui-btn-area button::after{
+    border: none;
+}
+
+.weui-btn-area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0px;
+    height: 46px;
+    overflow: hidden;
+}
+
+.weui-cells:after,.weui-cells:before{
+    display: none;
+}
+.weui-form-preview:after,.weui-form-preview:before {
+    display: none;
+}
+
+.weui-btn-area .weui-agree__text{
+    margin-top: 7px;
+}
+.weui-btn-area .btn-info{
+    color: #fff;
+    height: 46px;
+    width: 100%;
+    line-height: 46px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background: #10aeff;
+}
+.weui-btn-area .btn-info .icontubiao-{
+    font-size: 52rpx;
+}
+.weui-btn-area .btn-primary{
+    color: #fff;
+    height: 46px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background: #ff5000;
+}
+
+.tab-background {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.tab-content {
+    width: 90%;
+    position: fixed;
+    background-color: #fff;
+    z-index: 3;
+    top: 50%;
+    left: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.05);
+    margin-top: -150px;
+    overflow: hidden;
+}
+.weui-panel:after {
+    border-bottom: none;
+}
+.weui-media-box__desc{
+    width: 100%;
+    white-space: nowrap;
+}
+.weui-media-box__desc .item-day{
+    display: inline-block;
+    margin-right: 20rpx;
+    padding: 10rpx 20rpx;
+    border-radius: 5rpx;
+    border: 1px solid #eee;
+}
+.weui-media-box__desc .on{
+    background-color: #ff5000;
+    border: 1px solid #ff5000;
+    color: #fff;
+}

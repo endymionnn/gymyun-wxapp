@@ -1,0 +1,53 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="swiper">
+    <swiper autoplay="true" circular="true" easing-function="linear" style="height: 50vw;">
+        <block wx:for="{{view.pics}}" wx:key="index" wx:item="item">
+            <swiper-item>
+                <image src="{{item}}" style="width: 100%; height: 50vw;"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<view class="page__bd">
+    <view class="weui-article">
+        <view class="weui-article__h1">{{view.title}}</view>
+        <view class="weui-progress">
+            <view class="weui-progress__bar">
+                <progress percent="{{view.percent}}" stroke-width="8" activeColor="{{view.color}}"/>
+            </view>
+        </view>
+        <view class="weui-article__h3 btn-text">
+            <text wx:if="{{view.credit > 0}}">{{view.credit}}积分</text>
+            <text wx:if="{{view.money > 0}}">￥{{view.money}}</text>
+            <text wx:if="{{view.num_max > 0}}">限购{{view.num_max}}次</text>
+            <text>剩余：{{view.num - view.sale}}</text>
+        </view>
+    </view>
+    <view class="weui-tab__content">
+        <view class="shop-content">
+            <view class="p">购买说明</view>
+            <view class="a">
+                <rich-text nodes="{{content}}"></rich-text>
+            </view>
+        </view>
+    </view>
+
+    <block wx:if="{{copyright}}">
+        <view class="weui-footer">
+            <view class="weui-footer__text">{{copyright}}</view>
+        </view>
+    </block>
+    <view style="height: 70px;"></view>
+    <view class="weui-btn-area">
+        <view class="weui-flex">
+            <block wx:if="{{can}}">
+            <button class="btn-primary" type="primary" bindtap="buy">{{msg}}</button>
+            </block>
+            <block wx:else>
+            <button class="btn-primary" type="primary" disabled="true">{{msg}}</button>
+            </block>
+        </view>
+    </view>
+</view>

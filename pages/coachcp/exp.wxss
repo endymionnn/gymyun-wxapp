@@ -1,0 +1,178 @@
+.weui-flex {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.weui-flex .weui-flex__item {
+    height: 40px;
+    line-height: 80rpx;
+    text-align: center;
+    color: #666;
+}
+
+.weui-flex .p2 {
+    height: 40px;
+    line-height: 40rpx;
+    text-align: center;
+    background: #0096ff;
+    color: #fff;
+    font-size: 24rpx;
+    border-radius: 2px;
+}
+
+.top-height {
+    height: 40px;
+}
+.weui-cells::before, .weui-cells::after{
+    border: 0px;
+}
+.weui-cells .add{
+    font-size: 28rpx;
+    color: #999;
+}
+.weui-cells .weui-cell__hd image{
+    margin-right: 16px;
+    vertical-align: middle;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+}
+.weui-cells .realname{
+    font-size: 28rpx;
+}
+.weui-cells .title{
+    font-size: 24rpx;
+    color: #999;
+}
+.weui-cells .weui-cell__ft{
+    font-size: 24rpx;
+}
+.weui-cells .weui-cell:before{
+    border: 0px;
+    border-bottom: 1rpx solid #eee;
+}
+.weui-cells view.weui-cell:before{
+    border: 0px;
+}
+.wrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.group-main .weui-panel {
+    background: none;
+}
+.group-box{
+    min-height: 65vh;
+}
+.group-list {
+    padding: 0 15px 15px;
+    background: #fff;
+}
+
+.group-item {
+    padding-top: 15px;
+}
+
+.group-item .a {
+    display: block;
+    border-bottom: 0px;
+}
+
+.group-item .pic {
+    width: 108px;
+    height: 72px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.group-item .info {
+    margin-left: 118px;
+    height: 72px;
+    line-height: 48rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.group-item .info .h6 {
+    font-size: rpx;
+    color: #000;
+}
+
+.group-item .info .desc {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.group-item .info .p .span {
+    color: #F0AD4E;
+    font-size: 24rpx;
+    letter-spacing: 2rpx;
+}
+.group-item .info .p .img {
+    width: 42rpx;
+    height: 42rpx;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.group-item .info .p .cite {
+    font-size: 28rpx;
+}
+
+.group-item .info .p .em {
+    height: 24px;
+    line-height: 50rpx;
+    background: #0096ff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 24rpx;
+}
+.tab-background {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.tab-content {
+    width: 90%;
+    position: fixed;
+    background-color: #fff;
+    z-index: 3;
+    top: 50%;
+    left: 5%;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.05);
+    margin-top: -150px;
+    overflow: hidden;
+}
+.weui-panel:after {
+    border-bottom: none;
+}
+.weui-media-box__desc{
+    width: 100%;
+    white-space: nowrap;
+}
+.weui-media-box__desc .item-day{
+    display: inline-block;
+    margin-right: 20rpx;
+    padding: 10rpx 20rpx;
+    border-radius: 5rpx;
+    border: 1px solid #eee;
+}
+.weui-media-box__desc .on{
+    background-color: #ff5000;
+    border: 1px solid #ff5000;
+    color: #fff;
+}

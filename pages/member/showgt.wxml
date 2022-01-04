@@ -1,0 +1,88 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{qrcode}}">
+<view class="qrcode-box">
+    <view class="span" style="background-image: url({{data.banner}});"></view>
+    <view class="qrcode-pic">
+        <image src="{{qrcode}}" class="img"></image>
+    </view>
+    <block wx:if="{{data.start_time}}">
+    <view class="p">上课时间：{{data.start_time_s}}</view>
+    </block>
+    <block wx:else>
+    <view class="p">上课请联系教练预约具体时间</view>
+    </block>
+
+    <block wx:if="{{data.gym_free}}">
+    <view class="p">验证课程，出入不计费</view>
+    </block>
+</view>
+</block>
+
+<view class="h4 verify-subtitle">上课地点</view>
+<view class="verify-box">
+    <navigator url="/pages/shop/index?id={{data.shop_id}}" class="a" open-type="{{opentype}}" hover-class="none">
+        <view class="em pic">
+            <image src="{{data.logo}}" class="img"></image>
+        </view>
+        <view class="info">
+            <view class="h6">{{data.name}}</view>
+            <view class="p">{{data.address}}</view>
+        </view>
+    </navigator>
+</view>
+
+<view class="h4 verify-subtitle">授课教练</view>
+<view class="verify-box">
+    <navigator url="/pages/coach/show?id={{data.coach_id}}" class="a" open-type="{{opentype}}" hover-class="none">
+        <view class="em pic">
+            <image src="{{data.cpic}}" class="img"></image>
+        </view>
+        <view class="info">
+            <view class="h6">{{data.realname}}</view>
+            <view class="p">{{data.cdescription}}</view>
+        </view>
+    </navigator>
+</view>
+
+<view class="h4 verify-subtitle">课程</view>
+<view class="verify-box">
+    <navigator url="/pages/lesson/show?id={{data.lesson_id}}" class="a" open-type="{{opentype}}" hover-class="none">
+        <view class="em lesson_pic">
+            <image src="{{data.pic}}" class="img" mode="aspectFill"></image>
+        </view>
+        <view class="info">
+            <view class="h6">{{data.title}}</view>
+            <view class="p">{{data.description}}</view>
+        </view>
+    </navigator>
+</view>
+
+<view class="h4 verify-subtitle">上课记录</view>
+<block wx:if="{{verify}}">
+    <view>
+        <view class="verify-box">
+            <view class="a">
+                <view class="em pic">
+                    <image src="{{verify.pic}}" class="img"></image>
+                </view>
+                <view class="info">
+                    <view class="h6">{{verify.realname}}</view>
+                    <view class="p">{{data.verify_time}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>此课程您还没有上课记录</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

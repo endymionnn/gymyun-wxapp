@@ -1,0 +1,119 @@
+page{
+    background-color: #fafafa;
+}
+.weui-cells .headimg {
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.weui-cells .nickname{
+    font-size: 40rpx;
+}
+.weui-cells .desc{
+    font-size: 24rpx;
+    color: #999;
+}
+.weui-cells:before {
+  border-top:none;
+}
+.weui-cells:after{
+    border-bottom: none;
+}
+
+.tools, .data{
+    margin: 10px;
+    padding: 15px 0px; 
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #f7f7f7;
+}
+.tools .weui-flex__item{
+    text-align: center;
+}
+.weui-flex__item .iconfont{
+    font-size: 28px;
+    display: block;
+}
+.weui-flex__item .text{
+    font-size: 24rpx;
+    color: #666;
+}
+.weui-flex__item .icondengji{
+    color: #3bbafc;
+}
+.weui-flex__item .iconbiji{
+    color: #58d583;
+}
+.weui-flex__item .iconyuyue{
+    color: #23ccae;
+}
+.weui-flex__item .iconhuiyuan1{
+    color: #fbc125;
+}
+.weui-flex__item .iconhuifangjihua{
+    color: #929fff;
+}
+.iconmingpian{
+    color: #ff9401;
+    font-size: 48rpx;
+}
+.iconerweima_fuzhi{
+    font-size: 56rpx;
+    color: #666;
+}
+.weui-cells{
+    padding: 10px 0px;
+}
+.weui-cells:after,.weui-cells:before{
+    color: #eee;
+    border-color: #eee;
+}
+.weui-cell__bd{
+    margin-left: 15px;
+    font-size: 36rpx;
+}
+.weui-cell__bd .info{
+    color: #999;
+    font-size: 28rpx;
+}
+
+.data .weui-cells__title{
+    margin-top: 5px;
+}
+.data .weui-cells{
+    margin-top: 0px;
+}
+.data .weui-flex{
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 36rpx;
+}
+.data .weui-flex{
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 36rpx;
+}
+.data .weui-flex .p{
+    color: #333;
+    font-size: 24rpx;
+}
+.data .weui-flex .d{
+    color: #666;
+    margin-top: 10px;
+    font-size: 24rpx;
+}
+.data .weui-flex .d .big{
+    color: #333;
+    font-size: 36rpx;
+}
+.data .weui-flex .d .info{
+    color: #ccc;
+    font-size: 24rpx;
+}
+.weui-footer{
+    padding-bottom: 20px;
+}

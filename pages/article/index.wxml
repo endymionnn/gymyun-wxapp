@@ -1,0 +1,29 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="weui-panel">
+    <view class="weui-panel__bd">
+        <block wx:for="{{list}}" wx:key="index" wx:item="item">
+        <navigator class="weui-media-box weui-media-box_text" url="/pages/article/view?id={{item.id}}" open-type="{{opentype}}">
+            <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+            <view class="weui-media-box__desc">{{item.intro}}</view>
+            <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">{{item.dateline}}</view>
+            </view>
+        </navigator>
+        </block>
+    </view>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>暂无内容</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

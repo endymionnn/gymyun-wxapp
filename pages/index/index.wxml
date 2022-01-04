@@ -1,0 +1,42 @@
+<block wx:if="{{show}}">
+<view>
+    <view class="public-nav" style="height:{{titleBarHeight}}px;padding-top:{{statusBarHeight}}px">
+        <view class="title" style="height:{{titleBarHeight}}px;">{{title}}</view>
+    </view>
+    <view style="height:{{titleBarHeight + statusBarHeight}}px;"></view>
+</view>
+<block wx:if="{{is_list}}">
+<view class="index-main">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="found-list" style="background-image: url({{item.banner}});">
+        <navigator url="/pages/shop/index?id={{item.id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="tag" wx:if="{{item.tag}}">
+                <block wx:for="{{item.tag}}" wx:key="k" wx:for-item="v">
+                <view>{{v}}</view>
+                </block>
+            </view>
+            <view class="title cl">{{item.name}}</view>
+            <view class="address cl">地址 : {{item.address}}</view>
+            <view class="info">
+                <text class="em" wx:if="{{item.distance}}">{{item.distance}}</text>
+                <text class="em" wx:if="{{item.max_num}}">{{item.online_info.msg}}</text>
+            </view>
+        </navigator>
+    </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>{{msg}}</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>
+
+</block>

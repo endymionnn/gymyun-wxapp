@@ -1,0 +1,53 @@
+/* pages/index/location.wxss */
+
+.page {
+    width: 100%; height: 200rpx; position: absolute; top: 20%;
+}
+.avatar{
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+.nickname{
+    font-size: 32rpx;
+    text-align: center;
+}
+.weui-loadmore{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+button{
+    font-size: 28rpx;
+    width: 60%;
+    border: 0px;
+    background-color: #5fc58c;
+    color: #fff;
+    border-radius: 40px;
+}
+.navigator{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    text-align: center;
+    text-decoration: none;
+    line-height: 2.55555556;
+    border-radius: 40px;
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    color: #5fc58c;
+    background-color: #fff;
+    margin-top: 20px;
+    width: 60%;
+    border: 1px solid #5fc58c; 
+}
+.weui-cells:before{
+    display: none;
+}

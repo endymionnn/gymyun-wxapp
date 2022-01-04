@@ -1,0 +1,39 @@
+.pay-main {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.05);
+    border-radius: 5px;
+}
+.pay-main .pay-tips {
+    padding-top: 10px;
+    color: #aaa;
+    font-size: 28rpx;
+}
+.pay-price {
+    padding: 50px 0;
+    line-height: 1;
+    font-size: 72rpx;
+    text-align: center;
+    color: #f90;
+}
+.pay-price .cite {
+    font-size: 48rpx;
+}
+.pay-list .li {
+    border-top: 1px solid #eaeaea;
+    padding:10px 0;
+    line-height: 30px;
+    font-size: 28rpx;
+    color: #aaa;
+}
+.pay-list .li .em, .pay-list .li .span{
+    float: right;
+}
+.pay-list .li .span {
+    color: #f90;
+    font-weight: 700;
+}
+.pay-list .li .span .em {
+    font-size: 36rpx;
+}

@@ -1,0 +1,52 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+
+<view class="coach-main">
+    <view class="cl coach-list">
+        <view class="ur">
+        <block wx:for="{{list}}" wx:key="k" wx:for-item="v">
+            <view class="li coach-item">
+                <navigator url="/pages/space/view?id={{v.id}}" class="cl a" open-type="{{opentype}}" hover-class="none">
+                    <view class="em z pic" style="background-image: url({{v.pic}});"></view>
+                    <view class="info">
+                        <view class="h6 wrap">{{v.title}}</view>
+                        <view class="desc wrap"><text class="status" style="background: {{v.status.color}}">{{v.status.msg}}</text>￥{{v.price}} / 小时</view>
+                        <view class="p cl wrap">
+                            <view class="span z">
+                                <block wx:if="{{v.type == 1}}">
+                                <text>室内</text>
+                                </block>
+                                <block wx:else>
+                                <text>室外</text>
+                                </block>
+
+                                <block wx:if="{{v.num}}">
+                                <text>适用人数：{{v.num}}人</text>
+                                </block>
+                                <block wx:else>
+                                <text>适用人数：无限制</text>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </block>
+        </view>
+    </view>
+</view>
+
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>暂无场地</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

@@ -1,0 +1,38 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="money-main">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="money-list cl">
+        <block wx:if="{{item.type == 1}}">
+        <view class="list-number add-money">
+            <text class="cite">+</text>
+            <text class="em">{{item.credit}}</text>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="list-number reduce-money">
+            <text class="cite">-</text>
+            <text class="em">{{item.credit}}</text>
+        </view>
+        </block>
+        <view class="list-info cl">
+            <view class="i y">{{item.dateline}}</view>
+            {{item.remark}}
+        </view>
+    </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>暂无积分明细</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

@@ -1,0 +1,54 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="coach-view">
+    <view class="view-box">
+        <form bindsubmit='post'>
+            <view class="weui-form-preview">
+                <view class="weui-form-preview__bd">
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">券码类型</view>
+                        <view class="weui-form-preview__value">
+                            <picker bindchange="typeChange" value="{{type_key}}" range="{{type_arr}}" range-key="{{'name'}}">
+                                <view class="weui-select weui-select_in-select-after">{{type_arr[type_key].name}}</view>
+                            </picker>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-form-preview__bd" wx:if="{{show_shop}}">
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">选择门店</view>
+                        <view class="weui-form-preview__value">
+                            <picker bindchange="shopChange" value="{{shop_key}}" range="{{shop_arr}}" range-key="name">
+                                <view class="weui-select weui-select_in-select-after">{{shop_arr[shop_key].name}}</view>
+                            </picker>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-form-preview__bd">
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">券码</view>
+                        <view class="weui-form-preview__value">
+                            <input class="weui-select weui-input" type="text" name="code"/>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-form-preview__bd">
+                    <view class="weui-form-preview__item">
+                        <view class="weui-form-preview__label">兑换数量</view>
+                        <view class="weui-form-preview__value">
+                            <input class="weui-select weui-input" type="number" name="num" value="1"/>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-btn-area">
+                    <button class="weui-btn" type="primary" form-type="submit">确认兑换</button>
+                </view>
+            </view>
+        </form>
+    </view>
+    <block wx:if="{{copyright}}">
+    <view class="weui-footer">
+        <view class="weui-footer__text">{{copyright}}</view>
+    </view>
+    </block>
+</view>

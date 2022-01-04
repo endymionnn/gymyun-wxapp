@@ -1,0 +1,33 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="coach-main">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+        <view class="cl coach-list">
+            <navigator url="/pages/coach/view?id={{item.id}}" class="cl a" open-type="{{opentype}}" hover-class="none">
+                <view class="coach-per cl">
+                    <view class="em z pic">
+                        <image src="{{item.pic}}" class="img"></image>
+                    </view>
+                    <view class="info">
+                        <view class="h5 wrap">{{item.title}}</view>
+                        <text class="p wrap">{{item.description}}</text>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您暂无私教课程</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

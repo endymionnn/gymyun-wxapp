@@ -1,0 +1,35 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+
+<view  class="list-main">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="list-box">
+        <navigator url="/pages/member/showgt?id={{item.id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="em z left-pic" style="background-image: url({{item.lpic}});">
+                <view class="tips">{{item.status_str}}</view>
+            </view>
+        </navigator>
+        <view class="right-info">
+            <view class="h6">{{item.title}}</view>
+            <view class="p wrap"><image src="{{item.pic}}" class="img"></image>{{item.realname}}</view>
+            <view class="p wrap">{{item.start_time}}</view>
+            <view class="p wrap">{{item.address}}</view>
+            <view class="cancel" wx:if="{{item.cancel}}" bindtap="cancel" data-key="{{index}}" data-id="{{item.id}}">取消</view>
+        </view>
+    </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还没预约过团课课程</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

@@ -1,0 +1,104 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="weui-flex bj-white">
+    <view class="weui-flex__item">{{at_month}}月</view>
+    <block wx:for="{{time}}" wx:key="index" wx:item="item">
+    <view class="weui-flex__item" bindtap="change" data-week="{{item.week}}" data-index="{{index}}">
+        <block wx:if="{{item.week == at_week}}">
+        <view class="p2">
+            <view>{{item.week_str}}</view>
+            <view>{{item.time_str_short}}</view>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="p1">{{item.week_str_short}}</view>
+        </block>
+    </view>
+    </block>
+</view>
+<view class="top-height"></view>
+<view style="min-height: 70vh" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <view class="weui-cells">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="weui-cell weui-cell_access add" bindtap="show" data-k="{{index}}">
+        <view class="weui-cell__bd">{{item.str}}</view>
+        <block wx:if="{{item.add == 1}}">
+        <view class="weui-cell__ft weui-cell__ft_in-access">添加</view>
+        </block>
+    </view>
+    <block wx:for="{{item.child}}" wx:key="k" wx:for-item="v">
+    <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__hd">
+            <image src="{{v.face_img}}"></image>
+        </view>
+        <view class="weui-cell__bd">
+            <view class="realname">{{v.realname}}</view>
+            <view class="title">{{v.title}}</view>
+        </view>
+        <block wx:if="{{v.status == 1}}">
+        <view class="weui-cell__ft weui-cell__ft_in-access" bindtap="status" data-id="{{v.id}}">已预约</view>
+        </block>
+        <block wx:if="{{v.status == 2}}">
+        <view class="weui-cell__ft">已上课</view>
+        </block>
+    </view>
+    </block>
+    </block>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>
+</view>
+
+<view class="tab-background" wx:if="{{show}}" bindtap='close'></view>
+<view class="tab-content" wx:if="{{show}}">
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">预约上课</view>
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">上课时间</view>
+                <view class="item-day">{{stime_str}}</view>
+            </view>
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">选择课程</view>
+                <scroll-view scroll-x="true" class="weui-media-box__desc">
+                    <block wx:for="{{lesson}}" wx:key="index" wx:item="item">
+                        <block wx:if="{{item.id == lesson_id}}">
+                            <view class="item-day on" bindtap="selectLesson" data-id="{{item.id}}">
+                                {{item.title}}
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view class="item-day" bindtap="selectLesson" data-id="{{item.id}}">
+                                {{item.title}}
+                            </view>
+                        </block>
+                    </block>
+                </scroll-view>
+            </view>
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">选择会籍</view>
+                <scroll-view scroll-x="true" class="weui-media-box__desc">
+                    <block wx:for="{{membership}}" wx:key="index" wx:item="item">
+                        <block wx:if="{{item.id == ms_id}}">
+                            <view class="item-day on" bindtap="selectMs" data-id="{{item.id}}">
+                                {{item.realname}}
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view class="item-day" bindtap="selectMs" data-id="{{item.id}}">
+                                {{item.realname}}
+                            </view>
+                        </block>
+                    </block>
+                </scroll-view>
+            </view>
+        </view>
+        <view style="height: 20px;"></view>
+        <button class="btn-default" style="width: 80%" bindtap="submit">确认预约</button>
+        <view style="height: 30px;"></view>
+    </view>
+</view>

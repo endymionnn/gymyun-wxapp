@@ -1,0 +1,14 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="container flex">
+    <view>
+        <image src="{{coach.pic}}" class="avatar" bindtap="upload"></image>
+        <view class="item flex" bindtap="upload">点击上传</view>
+    </view>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

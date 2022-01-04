@@ -1,0 +1,31 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+
+<view  class="list-main">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="list-box">
+        <navigator url="/pages/space/myshow?id={{item.id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="em z left-pic" style="background-image: url({{item.pic}});"></view>
+            <view class="right-info">
+                <view class="h6">{{item.title}}</view>
+                <view class="p wrap">{{item.name}}</view>
+                <view class="p wrap">{{item.dateline}}</view>
+            </view>
+        </navigator>
+    </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>还没有预约记录</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

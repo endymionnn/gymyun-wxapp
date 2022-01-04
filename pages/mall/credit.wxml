@@ -1,0 +1,63 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+
+<view class="cate" wx:if="{{is_cate}}">
+    <scroll-view scroll-x="true" class="cate-item">
+        <block wx:for="{{cate}}" wx:key="index" wx:item="item">
+        <block wx:if="{{item.id == cate_id}}">
+            <view class="item item-a" bindtap="change" data-id="{{item.id}}">
+                {{item.name}}
+            </view>
+        </block>
+        <block wx:else>
+            <view class="item" bindtap="change" data-id="{{item.id}}" data-index="{{index}}">
+                {{item.name}}
+            </view>
+        </block>
+        </block>
+    </scroll-view>
+    <view class="top-height"></view>
+</view>
+
+<view class="credit">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="weui-panel__bd">
+        <navigator url="/pages/mall/creditview?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="none">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.pic}}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{item.title}}</view>
+                <view class="weui-media-box__desc">
+                    <view class="weui-progress">
+                        <view class="weui-progress__bar">
+                            <progress percent="{{item.percent}}" stroke-width="8" activeColor="{{item.color}}"/>
+                        </view>
+                    </view>
+                    <view class="btn">
+                        <text wx:if="{{item.credit > 0}}">{{item.credit}}积分</text>
+                        <text wx:if="{{item.money > 0}}">￥{{item.money}}</text>
+                    </view>
+                    <button class="weui-btn mini-btn" type="primary" size="mini"></button>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    </block>
+</view>
+
+
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>暂无数据</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

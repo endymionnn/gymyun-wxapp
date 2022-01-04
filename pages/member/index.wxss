@@ -1,0 +1,147 @@
+.weui-cells .headimg {
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.weui-cells .nickname{
+    font-size: 40rpx;
+}
+.weui-cells .desc{
+    font-size: 24rpx;
+    color: #999;
+}
+.weui-cells:before {
+  border-top:none;
+}
+.weui-cells:after{
+    border-bottom: none;
+}
+.weui-cell {
+    padding: 15px;
+}
+.weui-cell:before {
+    margin-left: 30px;
+    color: #000;
+    border-color: #eee;
+}
+.weui-cell__hd .iconfont {
+    font-size: 42rpx;
+    margin-right: 10px;
+}
+.weui-cell__hd .iconqianbao {
+    color: #f47676;
+}
+
+.weui-cell__hd .iconfensiguanli {
+    color: #69b29b;
+}
+
+.weui-cell__hd .iconguanzhu {
+    color: #799bda;
+}
+
+.weui-cell__hd .iconhuiyuanqia {
+    color: #807dd0;
+}
+
+.weui-cell__hd .iconjifenduihuan {
+    color: #f0ad4e;
+}
+
+.weui-cell__hd .iconweixinyundong {
+    color: #009fe8;
+}
+.weui-cell__hd .iconqiandao{
+    color: #00c777;
+}
+.weui-cell__hd .iconjianshenjilu {
+    color: #00c777;
+}
+.weui-cell__hd .iconsijiaoke {
+    color: #1485ee;
+}
+.weui-cell__hd .icontuanke1 {
+    color: #fa9d3b;
+}
+.weui-cell__hd .iconjianshenjiaolian {
+    color: #f80f80;
+}
+.weui-cell__hd .iconjiaolianrenzheng{
+    color: #00c777;
+}
+.weui-cell__hd .iconhuodong{
+    color: #00c777;
+}
+.weui-cell__hd .icontice {
+    color: #fa9d3b;
+}
+button{
+    line-height: 1.4;
+    background-color: #fff;
+    text-align: left;
+}
+button::after{
+    display: none;
+}
+.icontubiao-{
+    color:#00c777;
+}
+.iconziyuan{
+    color: #999;
+}
+.iconshezhi{
+    color:#fa9d3b;
+}
+.iconerweima_fuzhi{
+    font-size: 54rpx;
+    color: #333;
+}
+.icongerenxinxi{
+    color: #69129b;
+}
+.iconshoujiyanzheng{
+    color: #69a29b;
+}
+.iconface-de{
+    color: #d9a29b;
+}
+.iconqiapian{
+    color: #51b29b;
+}
+.iconzhbg-room{
+    color: #339933;
+}
+.iconzizhufuwu{
+    color: #69129b;
+}
+.iconhexiao{
+    color: #cc6600;
+}
+.weui-cell__bd{
+    font-size: 32rpx;
+}
+.member_invisible {
+    margin-top: 10px;
+    font-size: 28rpx;
+    margin-right: -8px;
+}
+.member_invisible text{
+    margin-right: 5px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+.wx-switch-input{
+    width: 38px !important;
+    height: 20px !important;
+}
+.wx-switch-input::before{
+    width: 36px !important;
+    height: 18px !important;
+}
+.wx-switch-input::after{
+    width: 18px !important;
+    height: 18px !important;
+}

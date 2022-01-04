@@ -1,0 +1,4 @@
+.weui-media-box__hd_in-appmsg {
+    width: 80px;
+    height: 80px;
+}

@@ -1,0 +1,32 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+
+<view style="width: 96%; margin: 0px auto;">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <navigator url="/pages/member/showactivity?id={{item.id}}" class="a" open-type="{{opentype}}" hover-class="none">
+    <view style="margin-top: 10px; background-color: #333; color: #fff; border-radius: 10px; overflow: hidden;">
+        <image src="{{item.content.pic}}" mode="widthFix" style="width: 100%;"/>
+        <view style="margin: 0px 10px; font-size: 18px;">{{item.content.title}}</view>
+        <view style="margin: 0px 10px 10px; font-size: 12px; color: #999;">
+            <text class="iconfont icontime"></text>
+            <text style="margin-left: 10px;">{{item.content.s_time}} ~ {{item.content.e_time}}</text>
+        </view>
+    </view>
+    </navigator>
+    </block>
+</view>
+
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还未参加过任何活动</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

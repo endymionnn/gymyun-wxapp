@@ -1,0 +1,104 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{qrcode}}">
+<view class="qrcode-box">
+    <view class="span" style="background-image: url({{shop.banner}});"></view>
+    <view class="qrcode-pic">
+        <image src="{{qrcode}}" class="img"></image>
+    </view>
+</view>
+</block>
+
+<view class="h4 verify-subtitle">预约信息</view>
+<block wx:if="{{order.position}}">
+<view class="info-box">
+    <view class="h6">位置编号：{{order.position}}</view>
+</view>
+</block>
+<view class="info-box weui-cell__ft_in-access" bindtap="renew">
+    <view class="h6">起止时间：{{order.stime}} ~ {{order.etime}}</view>
+    <view class="p">时间不够吗？可以点击尝试续费延时呀</view>
+</view>
+<block wx:if="{{space.num > 1}}">
+<view class="info-box">
+    <view class="h6">适用人数：{{space.num}}人</view>
+    <view class="p">发送给好友，邀请好友加入</view>
+</view>
+</block>
+<block wx:if="{{space.num == 0}}">
+<view class="info-box">
+    <view class="h6">适用人数：无限制</view>
+    <view class="p">发送给好友，邀请好友加入</view>
+</view>
+</block>
+<view class="h4 verify-subtitle">同行列表</view>
+<view class="weui-cells weui-cells_after-title">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+        <block wx:if="{{cancel}}">
+        <view class="weui-cell weui-cell_access" bindtap="cancel" data-key="{{index}}" data-id="{{item.id}}">
+            <view class="weui-cell__hd">
+                <image src="{{item.headimgurl}}" class="img"></image>
+            </view>
+            <view class="weui-cell__bd">
+                <view>{{item.nickname}}</view>
+                <view class="p">{{item.dateline}}</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="weui-cell weui-cell_access">
+            <view class="weui-cell__hd">
+                <image src="{{item.headimgurl}}" class="img"></image>
+            </view>
+            <view class="weui-cell__bd">
+                <view>{{item.nickname}}</view>
+                <view class="p">{{item.dateline}}</view>
+            </view>
+        </view>
+        </block>
+    </block>
+</view>
+<view class="h4 verify-subtitle">场地</view>
+<view class="verify-box">
+    <navigator url="/pages/space/view?id={{space.id}}" class="a weui-cell__ft_in-access" open-type="{{opentype}}" hover-class="none">
+        <view class="em pic">
+            <image src="{{space.pic}}" class="img" mode="aspectFill"></image>
+        </view>
+        <view class="info">
+            <view class="h6">{{space.title}}<block wx:if="{{order.position}}">（{{order.position}}）</block></view>
+            <view class="p">{{space.content}}</view>
+        </view>
+    </navigator>
+</view>
+<view class="h4 verify-subtitle">门店</view>
+<view class="verify-box">
+    <navigator url="/pages/shop/index?id={{shop.id}}" class="a weui-cell__ft_in-access" open-type="{{opentype}}" hover-class="none">
+        <view class="em pic">
+            <image src="{{shop.logo}}" class="img"></image>
+        </view>
+        <view class="info">
+            <view class="h6">{{shop.name}}</view>
+            <view class="p">{{shop.address}}</view>
+        </view>
+    </navigator>
+</view>
+
+<view style="clear: both;"></view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>
+
+<block wx:if="{{join}}">
+<view class="footer-box"></view>
+<view class="weui-btn-area">
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+            <button class="btn-primary" bindtap='join'>加入</button>
+        </view>
+    </view>
+</view>
+</block>

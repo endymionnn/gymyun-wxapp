@@ -1,0 +1,108 @@
+.weui-flex {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.weui-flex .weui-flex__item {
+    height: 40px;
+    line-height: 80rpx;
+    text-align: center;
+    color: #666;
+}
+
+.weui-flex .p2 {
+    height: 40px;
+    line-height: 40rpx;
+    text-align: center;
+    background: #0096ff;
+    color: #fff;
+    font-size: 24rpx;
+    border-radius: 2px;
+}
+
+.top-height {
+    height: 40px;
+}
+
+.wrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.group-main .weui-panel {
+    background: none;
+}
+.group-box{
+    min-height: 65vh;
+}
+.group-list {
+    padding: 0 15px 15px;
+    background: #fff;
+}
+
+.group-item {
+    padding-top: 15px;
+}
+
+.group-item .a {
+    display: block;
+    border-bottom: 0px;
+}
+
+.group-item .pic {
+    width: 108px;
+    height: 72px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.group-item .info {
+    margin-left: 118px;
+    height: 72px;
+    line-height: 48rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.group-item .info .h6 {
+    font-size: rpx;
+    color: #000;
+}
+
+.group-item .info .desc {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.group-item .info .p .span {
+    color: #F0AD4E;
+    font-size: 24rpx;
+    letter-spacing: 2rpx;
+}
+.group-item .info .p .img {
+    width: 42rpx;
+    height: 42rpx;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.group-item .info .p .cite {
+    font-size: 28rpx;
+}
+
+.group-item .info .p .em {
+    height: 24px;
+    line-height: 50rpx;
+    background: #0096ff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 24rpx;
+}

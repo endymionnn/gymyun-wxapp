@@ -1,0 +1,106 @@
+.public-nav{
+    background: none;
+    color: #fff;
+}
+.public-nav .nav-left, .public-nav .title{
+    color: #fff;
+}
+.header{
+    width: 100%;
+    height: 200px;
+    background-image: url('https://www.jiemo365.com/static/wxapp/images/membership-bg.png');
+    background-size: cover;
+    color: #fff;
+}
+.view-box {
+    margin: 0 15px;
+    position: relative;
+    top: -90px;
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+}
+.info-header{
+    font-size: 48rpx;
+}
+.weui-cells:after, .weui-cells:before{
+    display: none;
+}
+.weui-cells__title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.weui-cells__title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.icondianhua{
+    color: #58d583;
+    font-size: 48rpx;
+}
+.woman {
+    color: #ff4cb1;
+    font-size: 48rpx;
+}
+.man {
+    color: #467fff;
+    font-size: 48rpx;
+}
+
+.base-info {
+    padding-top: 15px;
+    margin-bottom: 30px;
+}
+.base-info .li {
+    width: 33.3333%;
+    float: left;
+    text-align: center;
+}
+.base-info .li view {
+    font-size: 36rpx;
+    color: #000;
+}
+.base-info .li .info{
+    font-size: 28rpx;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+.info-list{
+    font-size: 14px;
+}
+.weui-btn-area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f1f1f1;
+    margin: 0px;
+    height: 46px;
+    overflow: hidden;
+}
+
+.weui-btn-area .add{
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    color: #999;
+}
+.weui-btn-area .edit{
+    background: #ff5000;
+    color: #fff;
+    border-radius: 0px;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+}
+.weui-btn-area .ordered{
+    background: #2ab4fc;
+    color: #fff;
+    border-radius: 0px;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+}

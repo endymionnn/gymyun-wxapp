@@ -1,0 +1,12 @@
+.weui-msg__icon-area{
+    margin: 0px;
+}
+.iconshoujiyanzheng{
+    font-size: 93px;
+}
+.success{
+    color: #449d44;
+}
+.warn{
+    color: #f0ad4e;
+}

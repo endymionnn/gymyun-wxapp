@@ -1,0 +1,81 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="coach-main">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+        <view class="cl coach-list">
+            <navigator url="/pages/coach/show?id={{item.id}}" class="a link-show-jump" open-type="{{opentype}}" hover-class="none">
+                <view class="coach-per cl">
+                    <view class="em z pic">
+                        <image src="{{item.cpic}}" class="img"></image>
+                    </view>
+                    <view class="info">
+                        <view class="h5 wrap">{{item.realname}}</view>
+                        <text class="p wrap">{{item.description}}</text>
+                    </view>
+                </view>
+            </navigator>
+            <view class="ur">
+            <block wx:for="{{item.data}}" wx:key="k" wx:for-item="v">
+                <view class="li coach-item">
+                    <navigator url="/pages/coach/view?id={{v.id}}" class="cl a" open-type="{{opentype}}" hover-class="none">
+                        <view class="em z pic" style="background-image: url({{v.pic}});"></view>
+                        <view class="info">
+                            <view class="h6 wrap">{{v.title}}</view>
+                            <view class="desc wrap">{{v.desc}}</view>
+                            <view class="p cl wrap">
+                                <view class="span z">￥<text>{{v.price}}</text>/{{v.num}}课时</view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </block>
+            </view>
+        </view>
+    </block>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>
+
+<view class="footer-box"></view>
+<view class="footer">
+    <block wx:if="{{show_faxian}}">
+    <view class="li">
+        <navigator url="/pages/index/index" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconyemian-copy"></view>
+            <text>发现</text>
+        </navigator>
+    </view>
+    </block>
+    <view class="li">
+        <navigator url="/pages/shop/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconhotel"></view>
+            <text>门店</text>
+        </navigator>
+    </view>
+    <block wx:if="{{lesson_coach}}">
+    <view class="li on">
+        <navigator url="/pages/coach/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconjianshenjiaolian"></view>
+            <text>私教</text>
+        </navigator>
+    </view>
+    </block>
+    <block wx:if="{{lesson_group}}">
+    <view class="li">
+        <navigator url="/pages/group/index?id={{shop_id}}" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont icontuandui"></view>
+            <text>团课</text>
+        </navigator>
+    </view>
+    </block>
+    <view class="li">
+        <navigator url="/pages/member/index" class="navigator" open-type="{{opentype}}" hover-class="none">
+            <view class="iconfont iconIcon_wodeB"></view>
+            <text>我的</text>
+        </navigator>
+    </view>
+</view>

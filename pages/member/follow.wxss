@@ -1,0 +1,50 @@
+.fllow-list {
+    padding-top: 10px;
+}
+
+.fllow-list .fllow-li {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background: #ffffff;
+}
+
+.fllow-list .fllow-li:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #EAEBEC;
+    left: 0;
+    bottom: 0;
+}
+
+.fllow-list .fllow-li .z {
+    font-size: 30rpx;
+    line-height: 80rpx;
+}
+
+.fllow-list .fllow-li .z .img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.fllow-list .fllow-li .z .i {
+    padding-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.fllow-list .fllow-li .woman {
+    color: #ff4cb1;
+    font-size: 48rpx;
+}
+
+.fllow-list .fllow-li .man {
+    color: #467fff;
+    font-size: 48rpx;
+}

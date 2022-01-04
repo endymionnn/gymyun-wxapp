@@ -1,0 +1,35 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="vip-main">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <navigator url="/pages/card/myshow?id={{item.id}}" class="vip-shop cl" open-type="{{opentype}}" hover-class="none">
+    <view class="vip-list" style="background-image: url('{{item.card.bgimg}}');">
+        <image src="{{item.shop.logo}}" class="img z"></image>
+        <view class="h6">{{item.card.name}}</view>
+        <view class="p1">{{item.shop.name}}</view>
+        <view class="clear"></view>
+        <block wx:if="{{item.iccard}}">
+        <view class="p2">No.{{item.iccard}}</view>
+        </block>
+        <block wx:if="{{item.e_time}}">
+        <view class="p3"><view>过期时间</view><view>{{item.e_time}}</view></view>
+        </block>
+        <view class="clear"></view>
+    </view>
+    </navigator>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还未开通任何会员卡</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

@@ -1,0 +1,87 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{show}}">
+    <block wx:if="{{state}}">
+        <view class="pay-main cl">
+            <block wx:if="{{order}}">
+                <view class="pay-list">
+                    <view class="li" style="border: 0px;">
+                        设备名称
+                        <text class="em">{{data.name}}</text>
+                    </view>
+                    <view class="li">
+                        开始时间
+                        <text class="em">{{order.s_time}}</text>
+                    </view>
+                    <view class="li">
+                        使用时长
+                        <text class="em">{{order.minute}}分钟</text>
+                    </view>
+                    <view class="li">
+                        消费金额
+                        <text class="span">
+                            <text class="cite">￥</text>
+                            <text class="em">{{order.money}}</text>
+                        </text>
+                    </view>
+                    <view style="clear: both;"></view>
+                </view>
+                <view class="weui-btn-area">
+                    <button class="weui-btn" type="primary" bindtap="end">结 束</button>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="pay-list">
+                    <view class="li" style="border: 0px;">
+                        设备名称
+                        <text class="em">{{data.name}}</text>
+                    </view>
+                    <view class="li">
+                        收费标准
+                        <text class="em">{{data.price}}<block wx:if="{{data.charge_mode == 1}}"> / 分钟</block><block wx:else> / 小时</block></text>
+                    </view>
+                    <view class="li" wx:if="{{data.free_time}}">
+                        免费时长
+                        <text class="em">{{data.free_time}} 分钟</text>
+                    </view>
+                    <view class="li" wx:if="{{data.max_money}}">
+                        收费上限
+                        <text class="em">{{data.max_money}} 元</text>
+                    </view>
+                    <view class="li" wx:if="{{data.min_money}}">
+                        最低收费
+                        <text class="em">{{data.min_minute}} 分钟内固定收费 {{data.min_money}} 元</text>
+                    </view>
+                    <view style="clear: both;"></view>
+                </view>
+                <view class="weui-btn-area">
+                    <button class="weui-btn" type="primary" bindtap="start">开 始</button>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="page">
+            <view class="weui-msg">
+                <view class="weui-msg__icon-area">
+                    <icon type="warn" size="64"></icon>
+                </view>
+                <view class="weui-msg__text-area">
+                    <view class="weui-msg__title">{{msg}}</view>
+                    <view class="weui-msg__title-sub">{{msg_sub}}</view>
+                </view>
+                <view class="weui-msg__opr-area" wx:if="{{path}}">
+                    <view class="weui-btn-area">
+                        <navigator url="{{path}}" open-type="{{opentype}}" class="btn-info" hover-class="none">{{bt_info}}</navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

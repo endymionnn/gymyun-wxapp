@@ -1,0 +1,52 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class='wrap'>
+    <view class='header'>
+        <block wx:for="{{week_arr}}" wx:key="index" wx:item="item">
+        <view class='{{(index == week) ? "weekMark" : ""}}'>{{item}}<view></view></view>
+        </block>
+    </view>
+    <view class='date-box'>
+        <block wx:for="{{list}}" wx:key="index" wx:item="item">
+        <view class='{{item.today ? "nowDay" : ""}}' data-date='{{item.isToday}}'>
+            <view class='date-head'>
+                <view class='{{item.last ? "last" : ""}}'>{{item.d}}</view>
+            </view>
+            <block wx:if="{{item.sign == 0}}">
+            <view class='date-weight'></view>
+            </block>
+            <block wx:elif="{{item.sign == 1}}">
+            <view class='date-weight weight-1'>×</view>
+            </block>
+            <block wx:elif="{{item.sign == 2}}">
+            <view class='date-weight weight-2'>√</view>
+            </block>
+        </view>
+        </block>
+    </view>
+</view>
+
+<block wx:if="{{sign}}">
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="button-sp-area">
+            <button class="weui-btn" type="primary" plain="true" bindtap="sign">签到</button>
+        </view>
+    </view>
+</view>
+</block>
+
+<view class="weui-tab__content">
+    <view class="shop-content">
+        <view class="p">签到说明</view>
+        <view class="a">
+            <rich-text nodes="{{content}}"></rich-text>
+        </view>
+    </view>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

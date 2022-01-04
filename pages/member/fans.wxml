@@ -1,0 +1,32 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="fllow-list">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="fllow-li cl">
+        <view class="z">
+            <image src="{{item.headimgurl}}" class="img z"></image>
+            {{item.nickname}}
+            <block wx:if="{{item.gender == 1}}">
+            <text class="iconfont man iconicon-icon-yxj-male"></text>
+            </block>
+            <block wx:elif="{{item.gender == 2}}">
+            <text class="iconfont woman iconnv1"></text>
+            </block>
+        </view>
+    </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>还没人关注你哦</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

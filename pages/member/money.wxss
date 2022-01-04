@@ -1,0 +1,44 @@
+.money-main {
+    background: #fff;
+}
+.money-main .money {
+    padding: 30px 0;
+    line-height: 1;
+    font-size: 96rpx;
+    text-align: center;
+    color: #000;
+}
+.money-main .money view {
+    font-size: 28rpx;
+    color: #999;
+    margin-top: 30px;
+}
+
+.money-list{padding:10px 15px;line-height: 24px; border-bottom: 1px solid #eaebec;}
+.money-list:last-child{border: 0;}
+.money-list .list-info{font-size: 14px; color: #333;}
+.money-list .list-number{font-size: 20px;}
+.money-list .list-number .cite{font-size: 14px;}
+.money-list .list-number .em{font-weight: bold;}
+.money-list .list-number.reduce-money{color: #584f60;}
+.money-list .list-number.add-money{color: #ff8c00;}
+.money-list .list-number .y{color: #969696; font-size: 12px; font-weight: 400;}
+
+.weui-cell{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.weui-cell__bd {
+    font-size: 14px;
+    color: #666;
+}
+.money-btn{
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 2px 6px;
+    margin-right: 5px;
+    display: block;
+    float: left;
+    margin: 2px;
+    border-radius: 4px;
+}

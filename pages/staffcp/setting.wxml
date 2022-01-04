@@ -1,0 +1,12 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>暂无数据</text>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

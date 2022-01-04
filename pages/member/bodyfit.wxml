@@ -1,0 +1,102 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{show}}">
+
+<view class="header">
+    <view class="li">
+        <view class="score" style="background: {{score_color}}; box-shadow: 0 0 10px 5px {{score_color}};">
+            <view>{{data.score}}</view>
+            <text>体成分得分</text>
+        </view>
+    </view>
+    <view class="li">
+        <view class="info">
+            <view>身高：{{user.height}}</view>
+            <view>年龄：{{user.age}}</view>
+            <view>时间：{{data.scan_time}}</view>
+        </view>
+    </view>
+</view>
+
+<view class="user-data cl">
+    <view class="li">
+        <text class="p">{{data.state.body_age}}<text class="cite">岁</text></text>
+        <view>身体年龄</view>
+    </view>
+    <view class="li">
+        <text class="p">{{data.mass.WT.v}}<text class="cite">kg</text></text>
+        <view>体重</view>
+    </view>
+    <view class="li">
+        <text class="p">{{data.mass.PBF.v}}<text class="cite">%</text></text>
+        <view>体脂率</view>
+    </view>
+</view>
+
+<view class="weui-form-preview">
+    <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item" wx:if="{{data.msg.advice}}">
+            <view class="weui-form-preview__label">建议</view>
+            <view class="weui-form-preview__value">{{data.msg.advice}}</view>
+        </view>
+        <view class="weui-form-preview__item" wx:if="{{data.msg.conclusion}}">
+            <view class="weui-form-preview__label">结论</view>
+            <view class="weui-form-preview__value">{{data.msg.conclusion}}</view>
+        </view>
+    </view>
+</view>
+
+<view class="segment-fat-data">
+    <view class="report-components">
+        <view class="re-body-shell">
+            <block wx:for="{{data.mass}}" wx:key="index" wx:item="item">
+            <view class="re-body-cont">
+                <view class="body-weight-title">
+                    <view class="name">{{item.name}}</view>
+                    <view class="c" wx:if="{{item.c}}">对比上次：<text wx:if="{{item.c > 0}}">+</text>{{item.c}}</view>
+                </view>
+                <view style="clear: both;"></view>
+                <view class="shell-title">
+                    <view class="box">
+                        <view class="inner-box">
+                            <text class="speed-box" style="width: {{item.width}}%;">
+                                <text class="inner-speed" wx:if="{{item.status == 1}}" style="background: #ddd;"></text>
+                                <text class="inner-speed" wx:if="{{item.status == 2}}" style="background: #3bb684;"></text>
+                                <text class="inner-speed" wx:if="{{item.status == 3}}" style="background: #cc285c;"></text>
+                                <text class="toolip-box"><text>{{item.v}}</text></text>
+                            </text>
+                        </view>
+                        <view class="standard-box-wrapper">
+                            <view class="standard-box">
+                                <view class="standard-box-inner">
+                                    <text>{{item.l}}</text>
+                                    <text>{{item.h}}</text>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="standard-text">
+                            <text>低标准</text>
+                            <text>标准</text>
+                            <text>超标准</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            </block>
+        </view>
+    </view>
+</view>
+
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还没有体测报告</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

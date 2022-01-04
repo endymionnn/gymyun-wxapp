@@ -1,0 +1,34 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+
+<view class="weui-panel__bd">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <navigator url="/pages/mall/creditorderview?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="none">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.pic}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{item.title}}</view>
+            <view class="weui-media-box__desc">
+                <view style="margin: 10px 0px; color: #999;">{{item.dateline}}</view>
+                <view>{{item.status_str}}</view>
+            </view>
+        </view>
+    </navigator>
+    </block>
+</view>
+
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还没有购买过任何东西</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

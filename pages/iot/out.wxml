@@ -1,0 +1,33 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{show}}">
+<view class="page">
+    <view class="weui-msg">
+        <block wx:if="{{state}}">
+        <view class="weui-msg__icon-area">
+            <icon type="success" size="64"></icon>
+        </view>
+        </block>
+        <block wx:else>
+        <view class="weui-msg__icon-area">
+            <icon type="warn" size="64"></icon>
+        </view>
+        </block>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">{{msg}}</view>
+            <view class="weui-msg__title-sub">{{msg_sub}}</view>
+        </view>
+        <view class="weui-msg__opr-area" wx:if="{{path}}">
+            <view class="weui-btn-area">
+                <navigator url="{{path}}" open-type="{{opentype}}" class="btn-info" hover-class="none">{{bt_info}}</navigator>
+            </view>
+        </view>
+    </view>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

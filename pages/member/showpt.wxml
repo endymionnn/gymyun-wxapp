@@ -1,0 +1,170 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{qrcode}}">
+<view class="qrcode-box">
+    <view class="span" style="background-image: url({{data.banner}});"></view>
+    <view class="qrcode-pic">
+        <image src="{{qrcode}}" class="img"></image>
+    </view>
+    <view class="p">上课时间：{{exp_time}}</view>
+    <block wx:if="{{data.gym_free}}">
+    <view class="p">验证课程，出入不计费</view>
+    </block>
+</view>
+</block>
+
+<view class="h4 verify-subtitle">上课地点</view>
+<view class="verify-box">
+    <navigator url="/pages/shop/index?id={{data.shop_id}}" class="a" open-type="{{opentype}}" hover-class="none">
+        <view class="em pic">
+            <image src="{{data.logo}}" class="img"></image>
+        </view>
+        <view class="info">
+            <view class="h6">{{data.name}}</view>
+            <view class="p">{{data.address}}</view>
+        </view>
+    </navigator>
+</view>
+
+<view class="h4 verify-subtitle">授课教练</view>
+<view class="verify-box">
+    <navigator url="/pages/coach/show?id={{data.coach_id}}" class="a" open-type="{{opentype}}" hover-class="none">
+        <view class="em pic">
+            <image src="{{data.cpic}}" class="img"></image>
+        </view>
+        <view class="info">
+            <view class="h6">{{data.realname}}</view>
+            <view class="p">{{data.cdescription}}</view>
+        </view>
+    </navigator>
+</view>
+
+<view class="h4 verify-subtitle">课程（总课时：{{data.num}}）</view>
+<view class="verify-box">
+    <navigator url="/pages/lesson/show?id={{data.lesson_id}}" class="a" open-type="{{opentype}}" hover-class="none">
+        <view class="em lesson_pic">
+            <image src="{{data.pic}}" class="img" mode="aspectFill"></image>
+        </view>
+        <view class="info">
+            <view class="h6">{{data.title}}</view>
+            <view class="p">{{data.description}}</view>
+        </view>
+    </navigator>
+</view>
+
+<view class="h4 verify-subtitle">预约上课记录（已上课和已预约课时：{{data.use_num}}）</view>
+
+<block wx:if="{{is_list}}">
+    <view class="weui-cells weui-cells_after-title">
+        <block wx:for="{{list}}" wx:key="index" wx:item="item">
+            <block wx:if="{{item.status == 1}}">
+            <view class="weui-cell weui-cell_access" bindtap="cancel" data-key="{{index}}" data-id="{{item.id}}">
+                <view class="weui-cell__hd">
+                    <image src="{{item.pic}}" class="img"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{item.realname}}</view>
+                    <view class="p">{{item.exp_time}}</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">{{item.status_cn}}</view>
+            </view>
+            </block>
+            <block wx:else>
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__hd">
+                    <image src="{{item.pic}}" class="img"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{item.realname}}</view>
+                    <view class="p">{{item.exp_time}}</view>
+                </view>
+                <view class="weui-cell__ft">{{item.status_cn}}</view>
+            </view>
+            </block>
+        </block>
+    </view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>此课程您还没有预约记录</text>
+</view>
+</block>
+<view style="clear: both;"></view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>
+
+<block wx:if="{{show_order}}">
+<view class="footer-box"></view>
+<view class="weui-btn-area">
+    <view class="weui-flex">
+        <view class="weui-flex__item">
+            <button class="btn-info" open-type="contact"><view class="i iconfont icontubiao-"></view></button>
+        </view>
+        <view class="weui-flex__item">
+            <button class="btn-primary" bindtap='onTab'>预约上课</button>
+        </view>
+    </view>
+</view>
+</block>
+
+<view class="tab-background" wx:if="{{show}}" bindtap='close'></view>
+<view class="tab-content" wx:if="{{show}}">
+    <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">预约上课</view>
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">选择预约日期</view>
+                <scroll-view scroll-x="true" class="weui-media-box__desc">
+                    <block wx:for="{{day}}" wx:key="index" wx:item="item">
+                        <block wx:if="{{item.day == select_day}}">
+                            <view class="item-day on" bindtap="selectDay" data-day="{{item.day}}">
+                                {{item.day_str}}
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view class="item-day" bindtap="selectDay" data-day="{{item.day}}">
+                                {{item.day_str}}
+                            </view>
+                        </block>
+                    </block>
+                </scroll-view>
+            </view>
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">选择预约时间</view>
+                <scroll-view scroll-x="true" class="weui-media-box__desc">
+                    <block wx:for="{{hour}}" wx:key="index" wx:item="item">
+                        <block wx:if="{{item.time == select_hour}}">
+                            <view class="item-day on" bindtap="selectHour" data-hour="{{item.time}}">
+                                {{item.str}}
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view class="item-day" bindtap="selectHour" data-hour="{{item.time}}">
+                                {{item.str}}
+                            </view>
+                        </block>
+                    </block>
+                </scroll-view>
+            </view>
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">其他说明</view>
+                <scroll-view class="weui-media-box__desc">
+                    <block wx:if="{{data.cancel_time}}">
+                    提前{{data.cancel_time}}小时，可取消预约
+                    </block>
+                    <block wx:else>
+                    预约时间之前随时取消
+                    </block>
+                </scroll-view>
+            </view>
+        </view>
+        <view style="height: 20px;"></view>
+        <button class="btn-default" bindtap="submit" style="width: 80%">确认预约</button>
+        <view style="height: 30px;"></view>
+    </view>
+</view>

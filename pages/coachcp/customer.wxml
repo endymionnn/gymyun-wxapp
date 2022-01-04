@@ -1,0 +1,45 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="user-data cl">
+    <view class="li">
+        <text class="p">{{not_use}}</text>
+        <view>待授课</view>
+    </view>
+    <view class="li">
+        <text class="p">{{use_num}}</text>
+        <view>已授课</view>
+    </view>
+    <view class="li">
+        <text class="p">{{num}}</text>
+        <view>总课时</view>
+    </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="weui-cell weui-cell_example ">
+        <view class="weui-cell__hd">
+            <image src="{{item.face_img}}" class="image"></image>
+        </view>
+        <view class="weui-cell__bd">{{item.realname}}</view>
+        <view class="weui-cell__ft">
+            <view>{{item.title}}</view>
+            <view>{{item.use_num}} / {{item.num}} (有效期至：{{item.end_time}})</view>
+        </view>
+    </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>还没有会员预约过</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

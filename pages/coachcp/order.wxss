@@ -1,0 +1,45 @@
+.list-main {
+    padding-bottom: 10px;
+}
+
+.list-box {
+    background: #fff;
+    clear: both;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.list-box .left-pic {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.list-box .right-info {
+    margin-left: 74px;
+    overflow: hidden;
+}
+.list-box .right-info .h6 {
+    font-size: 36rpx;
+    height: 30px;
+    line-height: 60rpx;
+    color: #000;
+    overflow: hidden;
+}
+.list-box .right-info .p {
+    line-height: 50rpx;
+    height: 25px;
+    font-size: 26rpx;
+    color: #999;
+    clear: both;
+}
+.list-box .right-info .left{
+    float: left;
+}
+.list-box .right-info .right{
+    float: right;
+}

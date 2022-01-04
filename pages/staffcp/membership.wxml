@@ -1,0 +1,44 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{keyword}}" focus="{{keywordShowed}}" bindinput="searchTyping" />
+            <view class="weui-icon-clear" wx:if="{{keyword.length > 0}}" bindtap="clearSearch">
+                <icon type="clear" size="14"></icon>
+            </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{keywordShowed}}" bindtap="showSearch">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+        </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!keywordShowed}}" bindtap="hideSearch">取消</view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <navigator url="/pages/staffcp/membershipview?id={{item.id}}" class="weui-cell weui-cell_access" open-type="{{opentype}}" hover-class="none">
+        <view class="weui-cell__bd">
+            <view>{{item.realname}}</view>
+            <view class="info">{{item.source}} | {{item.sale}}</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    </block>
+</view>
+
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还没需要管理的客户</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

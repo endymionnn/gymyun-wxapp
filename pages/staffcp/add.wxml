@@ -1,0 +1,109 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<view class="page">
+    <view class="page__bd">
+        <form bindsubmit='handle'>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">真实姓名</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" name="realname" placeholder="请输入真实姓名" value="{{data.realname}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">性别</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindGenderChange" value="{{genderIndex}}" range="{{gender_type}}">
+                            <view class="weui-select weui-select_in-select-after">{{gender_type[genderIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">联系电话</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" name="phone" placeholder="请输入联系电话" value="{{data.phone}}" readonly/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">生日</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+                            <view class="weui-input">{{date}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">来源</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindSourceChange" value="{{sourceIndex}}" range="{{source_type}}">
+                            <view class="weui-select weui-select_in-select-after">{{source_type[sourceIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">意向</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindSaleChange" value="{{saleIndex}}" range="{{sale_type}}">
+                            <view class="weui-select weui-select_in-select-after">{{sale_type[saleIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">目的</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindGymChange" value="{{gymIndex}}" range="{{gym_type}}">
+                            <view class="weui-select weui-select_in-select-after">{{gym_type[gymIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">备注说明</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" name="remark" placeholder="请输入备注说明" value="{{data.remark}}"/>
+                    </view>
+                </view>
+            </view>
+            <block wx:if="{{coupon}}">
+            <view class="weui-cells__title">参加活动</view>
+            <view class="weui-cells weui-cells_after-title">
+                <checkbox-group bindchange="couponChange">
+                    <label class="weui-cell weui-check__label" wx:for="{{coupon}}" wx:key="value">
+                        <checkbox class="weui-check" value="{{item.id}}" checked="{{item.checked}}"/>
+                        <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                            <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                            <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+                        </view>
+                        <view class="weui-cell__bd">{{item.title}}</view>
+                    </label>
+                </checkbox-group>
+            </view>
+            </block>
+            <view style="height: 40rpx;"></view>
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="primary" form-type="submit">确定</button>
+            </view>
+        </form>
+    </view>
+</view>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

@@ -1,0 +1,33 @@
+page{
+    background-color: #fafafa;
+}
+
+.coach-view{
+    width: 100%;
+    overflow: hidden;
+}
+
+.coach-view .view-box {
+    margin: 20px 15px;
+    position: relative;
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 2px 1px rgba(0,0,0, 0.05);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.weui-cells:after,.weui-cells:before{
+    display: none;
+}
+.weui-form-preview:after,.weui-form-preview:before {
+    display: none;
+}
+.weui-select{
+    border: 0px;
+    padding-right: 15px;
+}
+.weui-select:before{
+    right: 2px;
+}

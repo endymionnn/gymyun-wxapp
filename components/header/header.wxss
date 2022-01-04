@@ -1,0 +1,58 @@
+@import '/static/iconfont/iconfont.wxss';
+
+.navbar-box{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 44px;
+    z-index: 999;
+    box-sizing: content-box;
+    background-color: #fff;
+}
+.navbar-container {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.navbar-capsule {
+    margin-left: 10px;
+    height: 30px;
+    border: 1rpx solid rgba(0,0,0,0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+}
+.navbar-capsule-back {
+    width: 30px;
+    height: 80%;
+    padding: 0 7px;
+    position: relative;
+    text-align: center;
+    padding-left: 1px;
+    border-right: 1rpx solid rgba(0,0,0,0.1);
+}
+.navbar-capsule-home{
+    width: 30px;
+    height: 80%;
+    padding: 0 7px;
+    position: relative;
+    text-align: center;
+}
+.navbar-title {
+    position: absolute;
+    left: 104px;
+    right: 104px;
+    font-size: 16px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.navbar-empty-custom{
+    content: "";
+    height: 44px;
+    width: 100%;
+    box-sizing: content-box;
+}

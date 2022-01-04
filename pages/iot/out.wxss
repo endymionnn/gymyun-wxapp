@@ -1,0 +1,22 @@
+.weui-msg__title{
+    font-size: 48rpx;
+}
+.weui-msg__title-sub{
+    font-size: 36rpx;
+    color: #666;
+}
+.weui-btn-area{
+    padding-top: 20px;
+}
+.weui-btn-area .btn-info{
+    color: #fff;
+    height: 38px;
+    width: 200px;
+    line-height: 38px;
+    margin: 0px auto;
+    padding: 0px;
+    border-radius: 5px;
+    border: 0px;
+    background: #0eaf96;
+    font-size: 28rpx;
+}

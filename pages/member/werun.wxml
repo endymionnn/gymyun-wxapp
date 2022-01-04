@@ -1,0 +1,32 @@
+<header navigationBarTitle="{{title}}"></header>
+
+<block wx:if="{{is_list}}">
+<view class="gym-list">
+    <block wx:for="{{list}}" wx:key="index" wx:item="item">
+    <view class="li cl">
+        <view class="minute">{{item.step}}步</view>
+        <view class="info cl">
+            {{item.dateline}}
+        </view>
+        <block wx:if="{{item.credits > 0}}">
+        <view class="info cl">
+            今日运动步数可兑换 {{item.credits}} 积分
+        </view>
+        <button class="weui-btn mini-btn" type="default" size="mini" bindtap="redeem" data-index="{{index}}">点击兑换</button>
+        </block>
+    </view>
+    </block>
+</view>
+</block>
+<block wx:else>
+<view class="no-data">
+    <view class="iconfont iconNo-data"></view>
+    <text>您还没有任何记录哦</text>
+</view>
+</block>
+
+<block wx:if="{{copyright}}">
+<view class="weui-footer">
+    <view class="weui-footer__text">{{copyright}}</view>
+</view>
+</block>

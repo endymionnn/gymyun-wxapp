@@ -1,0 +1,61 @@
+.weui-cells .headimg {
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+}
+.weui-cells .nickname{
+    font-size: 40rpx;
+}
+.weui-cells .desc{
+    font-size: 24rpx;
+    color: #999;
+}
+.weui-cells:before {
+  border-top:none;
+}
+.weui-cells:after{
+    border-bottom: none;
+}
+.weui-cell {
+    padding: 15px;
+}
+.weui-cell:before {
+    margin-left: 30px;
+    color: #000;
+    border-color: #eee;
+}
+.weui-cell__hd .iconfont {
+    font-size: 20px;
+    margin-right: 10px;
+}
+.weui-cell__hd .iconwodezhuye {
+    color: #f47676;
+}
+
+.weui-cell__hd .icongerenxinxi {
+    color: #69b29b;
+}
+
+.weui-cell__hd .iconshangchuantouxiang {
+    color: #799bda;
+}
+
+.weui-cell__hd .iconsijiaoke {
+    color: #807dd0;
+}
+.weui-cell__hd .icontuandui{
+    color: #ff3399;
+}
+.weui-cell__hd .iconyuyuejilu {
+    color: #00c777;
+}
+.weui-cell__hd .icontuanke1 {
+    color: #1485ee;
+}
+.weui-cell__hd .iconrichengtixing {
+    color: #fa9d3b;
+}
+.weui-cell__hd .iconyuyue{
+    color: #fa9d3b;
+}
